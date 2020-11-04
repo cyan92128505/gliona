@@ -37,7 +37,7 @@
     "lint": "tslint -p ./tsconfig.json",
     "lint:fix": "tslint --fix -p ./tsconfig.json",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "sh ./CI/deploy.sh"
   },
   "homepage": "https://cyan92128505.github.io/gliona",
   "eslintConfig": {
