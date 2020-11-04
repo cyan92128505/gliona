@@ -14,6 +14,7 @@
     "@types/react-redux": "^7.1.9",
     "@types/react-router-dom": "^5.1.6",
     "@types/redux-logger": "^3.0.8",
+    "gh-pages": "^3.1.0",
     "material-ui": "^0.20.2",
     "node-sass": "^4.14.1",
     "react": "^17.0.1",
@@ -34,8 +35,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "tslint -p ./tsconfig.json",
-    "lint:fix": "tslint --fix -p ./tsconfig.json"
+    "lint:fix": "tslint --fix -p ./tsconfig.json",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
+  "homepage": "https://cyan92128505.github.io/gliona",
   "eslintConfig": {
     "extends": [
       "react-app",
