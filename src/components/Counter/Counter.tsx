@@ -1,5 +1,5 @@
+import { Button, Container } from '@material-ui/core';
 import React, { useState } from 'react';
-import styles from './Counter.module.scss';
 
 type Props = {
   initialClick?: number;
@@ -9,10 +9,12 @@ const Counter: React.FC<Props> = ({ initialClick = 0 }) => {
   const [click, setClick] = useState(initialClick);
 
   return (
-    <div className={styles.hello}>
+    <Container maxWidth="sm">
       <p>Click: {click}</p>
-      <button onClick={() => setClick(click + 1)}>Click Me!</button>
-    </div>
+      <Button variant="contained" color="primary" onClick={() => setClick(click + 1)}>
+        Click Me!
+      </Button>
+    </Container>
   );
 };
 

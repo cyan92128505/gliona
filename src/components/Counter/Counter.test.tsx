@@ -5,8 +5,6 @@ import Counter from './Counter';
 
 describe('<Counter />', () => {
   test('it should mount', () => {
-    const state = { count: 0 };
-
     render(<Counter />);
 
     const counter = screen.getByTestId('Counter');
