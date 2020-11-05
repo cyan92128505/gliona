@@ -1,8 +1,10 @@
 import PostIcon from '@material-ui/icons/Book';
+import DashboardIcon from '@material-ui/icons/Dashboard';
 import localStorageDataProvider from 'ra-data-local-storage';
 import React from 'react';
 import { Admin, Resource } from 'react-admin';
 import ReactDOM from 'react-dom';
+import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Post from './resources/posts';
@@ -25,6 +27,7 @@ const dataProvider = localStorageDataProvider({
 
 ReactDOM.render(
   <Admin dataProvider={dataProvider}>
+    <Resource name="dashboard" list={App} icon={DashboardIcon} />
     <Resource name="posts" list={Post.list} icon={PostIcon} />
   </Admin>,
   document.getElementById('root')
