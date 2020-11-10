@@ -10,7 +10,8 @@ const Counter: React.FC<Props> = ({ initialClick = 0 }) => {
 
   return (
     <Container maxWidth="sm">
-      <p>Click: {click}</p>
+      Click: {click}
+      <br />
       <Button variant="contained" color="primary" onClick={() => setClick(click + 1)}>
         Click Me!
       </Button>
