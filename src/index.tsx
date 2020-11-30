@@ -1,4 +1,3 @@
-import { createMuiTheme } from '@material-ui/core/styles';
 import PostIcon from '@material-ui/icons/Book';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import localStorageDataProvider from 'ra-data-local-storage';
@@ -6,18 +5,19 @@ import React from 'react';
 import { Admin, Resource } from 'react-admin';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { MainObject } from './models/main';
 import Dashboard from './pages/dashboard/dashboard';
 import reportWebVitals from './reportWebVitals';
 import Post from './resources/posts';
 import { myTheme } from './theme/custom_theme';
 
+const mainObject = new MainObject();
+mainObject.posts.push({ id: 0, title: 'Hello, world!' });
+mainObject.posts.push({ id: 1, title: 'FooBar' });
+mainObject.posts.push({ id: 2, title: 'FooBar2' });
+
 const dataProvider = localStorageDataProvider({
-  defaultData: {
-    posts: [
-      { id: 0, title: 'Hello, world!' },
-      { id: 1, title: 'FooBar' },
-    ],
-  },
+  defaultData: mainObject,
   localStorageKey: '',
   loggingEnabled: true,
   localStorageUpdateDelay: 100,
