@@ -5,7 +5,7 @@ import { Admin, Resource } from 'react-admin';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { Buyer } from './models/buyer';
-import { MainObject } from './models/main';
+import { MainObject } from './models/main_object';
 import { Rating } from './models/rating';
 import { RatingType } from './models/rating_type';
 import Dashboard from './pages/dashboard/dashboard';
@@ -15,16 +15,16 @@ import RatingResourse from './resources/ratings';
 import { myTheme } from './theme/custom_theme';
 
 const mainObject = new MainObject();
-mainObject.buyers.push(new Buyer(0, '', [], ''));
-mainObject.buyers.push(new Buyer(1, '', [], ''));
-mainObject.buyers.push(new Buyer(2, '', [], ''));
-mainObject.ratings.push(new Rating(0, '', new RatingType(0, '', 1), 1));
-mainObject.ratings.push(new Rating(1, '', new RatingType(0, '', 1), 1));
-mainObject.ratings.push(new Rating(2, '', new RatingType(0, '', 1), 1));
+mainObject.buyers.push(new Buyer(0, 'Buyer1', [], ''));
+mainObject.buyers.push(new Buyer(1, 'Buyer2', [], ''));
+mainObject.buyers.push(new Buyer(2, 'Buyer3', [], ''));
+mainObject.ratings.push(new Rating(0, 'Rating1', new RatingType(0, '', 1), 1));
+mainObject.ratings.push(new Rating(1, 'Rating2', new RatingType(0, '', 1), 1));
+mainObject.ratings.push(new Rating(2, 'Rating3', new RatingType(0, '', 1), 1));
 
 const dataProvider = localStorageDataProvider({
   defaultData: mainObject,
-  localStorageKey: '',
+  localStorageKey: 'gliona',
   loggingEnabled: true,
   localStorageUpdateDelay: 100,
 });
