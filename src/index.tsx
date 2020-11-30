@@ -1,3 +1,4 @@
+import { createMuiTheme } from '@material-ui/core/styles';
 import PostIcon from '@material-ui/icons/Book';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import localStorageDataProvider from 'ra-data-local-storage';
@@ -8,6 +9,7 @@ import './index.css';
 import Dashboard from './pages/dashboard/dashboard';
 import reportWebVitals from './reportWebVitals';
 import Post from './resources/posts';
+import { myTheme } from './theme/custom_theme';
 
 const dataProvider = localStorageDataProvider({
   defaultData: {
@@ -22,7 +24,7 @@ const dataProvider = localStorageDataProvider({
 });
 
 ReactDOM.render(
-  <Admin dataProvider={dataProvider}>
+  <Admin theme={myTheme} dataProvider={dataProvider}>
     <Resource name="dashboard" list={Dashboard} icon={DashboardIcon} />
     <Resource name="posts" list={Post.list} icon={PostIcon} />
   </Admin>,
