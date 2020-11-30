@@ -1,9 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles';
-import BookIcon from '@material-ui/icons/Book';
+import GradeIcon from '@material-ui/icons/Grade';
 import React from 'react';
 import { Datagrid, List, ListProps, TextField } from 'react-admin'; // eslint-disable-line import/no-unresolved
 
-export const PostIcon = BookIcon;
+export const RatingIcon = GradeIcon;
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -20,17 +20,17 @@ const useStyles = makeStyles((theme) => ({
   publishedAt: { fontStyle: 'italic' },
 }));
 
-const PostList: React.FC<ListProps> = (props) => {
+const RatingList: React.FC<ListProps> = (props) => {
   const classes = useStyles();
 
   return (
     <List {...props}>
       <Datagrid optimized>
         <TextField source="id" />
-        <TextField source="title" cellClassName={classes.title} />
+        <TextField source="name" cellClassName={classes.title} />
       </Datagrid>
     </List>
   );
 };
 
-export default PostList;
+export default RatingList;

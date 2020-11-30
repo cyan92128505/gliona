@@ -1,3 +1,8 @@
-const Buyer = {};
+import BuyerList, { BuyerIcon } from './buyer_list';
 
-export default Buyer;
+const BuyerResource = {
+  list: BuyerList,
+  icon: BuyerIcon,
+};
+
+export default BuyerResource;
