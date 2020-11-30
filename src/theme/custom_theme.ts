@@ -1,9 +1,9 @@
-import { brown, indigo, red } from '@material-ui/core/colors';
+import { brown, red, teal } from '@material-ui/core/colors';
 import { createMuiTheme } from '@material-ui/core/styles';
 
 export const myTheme = createMuiTheme({
   palette: {
-    primary: indigo,
+    primary: teal,
     secondary: brown,
     error: red,
     contrastThreshold: 3,
