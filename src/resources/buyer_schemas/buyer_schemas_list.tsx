@@ -1,0 +1,36 @@
+import { makeStyles } from '@material-ui/core/styles';
+import CategorySharpIcon from '@material-ui/icons/CategorySharp';
+import React from 'react';
+import { Datagrid, List, ListProps, TextField } from 'react-admin'; // eslint-disable-line import/no-unresolved
+
+export const BuyerIcon = CategorySharpIcon;
+
+const useStyles = makeStyles((theme) => ({
+  title: {
+    maxWidth: '20em',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+  },
+  hiddenOnSmallScreens: {
+    [theme.breakpoints.down('md')]: {
+      display: 'none',
+    },
+  },
+  publishedAt: { fontStyle: 'italic' },
+}));
+
+const BuyerSchemaList: React.FC<ListProps> = (props) => {
+  const classes = useStyles();
+
+  return (
+    <List {...props}>
+      <Datagrid optimized>
+        <TextField source="id" />
+        <TextField source="name" cellClassName={classes.title} />
+      </Datagrid>
+    </List>
+  );
+};
+
+export default BuyerSchemaList;

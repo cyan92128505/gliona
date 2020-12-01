@@ -4,23 +4,13 @@ import React from 'react';
 import { Admin, Resource } from 'react-admin';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { Buyer } from './models/buyer';
 import { MainObject } from './models/main_object';
-import { Rating } from './models/rating';
-import { RatingType } from './models/rating_type';
 import Dashboard from './pages/dashboard/dashboard';
 import reportWebVitals from './reportWebVitals';
-import BuyerResourse from './resources/buyers';
-import RatingResourse from './resources/ratings';
+import Resourse from './resources';
 import { myTheme } from './theme/custom_theme';
 
 const mainObject = new MainObject();
-mainObject.buyers.push(new Buyer(0, 'Buyer1', [], ''));
-mainObject.buyers.push(new Buyer(1, 'Buyer2', [], ''));
-mainObject.buyers.push(new Buyer(2, 'Buyer3', [], ''));
-mainObject.ratings.push(new Rating(0, 'Rating1', new RatingType(0, '', 1), 1));
-mainObject.ratings.push(new Rating(1, 'Rating2', new RatingType(0, '', 1), 1));
-mainObject.ratings.push(new Rating(2, 'Rating3', new RatingType(0, '', 1), 1));
 
 const dataProvider = localStorageDataProvider({
   defaultData: mainObject,
@@ -32,8 +22,26 @@ const dataProvider = localStorageDataProvider({
 ReactDOM.render(
   <Admin theme={myTheme} dataProvider={dataProvider}>
     <Resource name="dashboard" list={Dashboard} icon={DashboardIcon} />
-    <Resource name="buyers" list={BuyerResourse.list} icon={BuyerResourse.icon} />
-    <Resource name="ratings" list={RatingResourse.list} icon={RatingResourse.icon} />
+    <Resource
+      name={Resourse.BuyerResource.name}
+      list={Resourse.BuyerResource.list}
+      icon={Resourse.BuyerResource.icon}
+    />
+    <Resource
+      name={Resourse.BuyerSchemaResource.name}
+      list={Resourse.BuyerSchemaResource.list}
+      icon={Resourse.BuyerSchemaResource.icon}
+    />
+    <Resource
+      name={Resourse.RatingResource.name}
+      list={Resourse.RatingResource.list}
+      icon={Resourse.RatingResource.icon}
+    />
+    <Resource
+      name={Resourse.RatingTypeResource.name}
+      list={Resourse.RatingTypeResource.list}
+      icon={Resourse.RatingTypeResource.icon}
+    />
   </Admin>,
   document.getElementById('root')
 );
