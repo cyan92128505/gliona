@@ -41,6 +41,8 @@ ReactDOM.render(
       name={Resourse.RatingTypeResource.name}
       list={Resourse.RatingTypeResource.list}
       icon={Resourse.RatingTypeResource.icon}
+      create={Resourse.RatingTypeResource.create}
+      edit={Resourse.RatingTypeResource.edit}
     />
   </Admin>,
   document.getElementById('root')
