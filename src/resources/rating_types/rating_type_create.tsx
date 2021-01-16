@@ -10,3 +10,5 @@ export const RatingTypeCreate: React.FC<CreateProps> = (props) => (
     </SimpleForm>
   </Create>
 );
+
+export default RatingTypeCreate;

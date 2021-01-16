@@ -23,3 +23,5 @@ export const myTheme = createMuiTheme({
     },
   },
 });
+
+export default myTheme;
