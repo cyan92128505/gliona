@@ -13,7 +13,7 @@ import { getResources, useTranslate, Translate, ReduxState } from 'ra-core';
 
 import { MenuItemLink, MenuProps } from 'react-admin';
 
-import ScannerMenuItem from './menu_items/scanner_menu_item';
+import SettingMenuItem from './menu_items/setting_menu_item';
 import DashboardMenuItem from './menu_items/dashboard_menu_item';
 
 export const MENU_WIDTH = 240;
@@ -74,7 +74,7 @@ const Menu: FC<CustomMenuProps> = (props) => {
   useSelector((state: ReduxState) => state.router.location.pathname);
 
   const customMenuItem = [
-    <ScannerMenuItem key="ScannerMenuIt≥ƒem" onClick={onMenuClick} dense={dense} sidebarIsOpen={open} />,
+    <SettingMenuItem key="ScannerMenuIt≥ƒem" onClick={onMenuClick} dense={dense} sidebarIsOpen={open} />,
   ];
 
   return (

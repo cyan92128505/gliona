@@ -8,19 +8,20 @@ import { DashboardMenuItemProps } from 'react-admin';
 
 import { MenuItemLink } from 'ra-ui-materialui';
 import { i18nProxy } from '../../../../i18n/language_proxy';
+import { SettingIcon } from '../../../../resources/setting/list';
 
-const ScannerMenuItem: FC<DashboardMenuItemProps> = ({ locale, onClick, ...props }) => {
+const SettingMenuItem: FC<DashboardMenuItemProps> = ({ locale, onClick, ...props }) => {
   const translate = useTranslate();
   return (
     <MenuItemLink
       onClick={onClick}
       to="/setting"
       primaryText={translate(i18nProxy.resources.setting.name())}
-      leftIcon={<CropFreeIcon />}
+      leftIcon={<SettingIcon />}
       exact
       {...props}
     />
   );
 };
 
-export default ScannerMenuItem;
+export default SettingMenuItem;
