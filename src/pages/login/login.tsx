@@ -19,9 +19,6 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '100vh',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    background: 'url(./assets/images/backgroung.jpg)',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
     '&::after': {
       content: `"${env.copyRight}"`,
       color: '#fff',
@@ -125,7 +122,7 @@ const Login = () => {
           <div className={classes.main}>
             <Card className={classes.card}>
               <div className={classes.avatar}>
-                <AppMainLogo />
+                <AppMainLogo fill="#000000" />
               </div>
               <div className={classes.form}>
                 <div className={classes.input}>

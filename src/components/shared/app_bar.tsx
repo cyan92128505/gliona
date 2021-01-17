@@ -39,6 +39,7 @@ const useStyles = makeStyles(
       transform: 'rotate(180deg)',
     },
     title: {
+      margin: '8px',
       flex: 1,
       textOverflow: 'ellipsis',
       whiteSpace: 'nowrap',
@@ -51,12 +52,7 @@ const useStyles = makeStyles(
       margin: '4px',
       width: 48,
       height: 48,
-    },
-    superUser: {
-      color: theme.palette.error.main,
-    },
-    normalUser: {
-      color: theme.palette.primary.main,
+      color: '#fff',
     },
   }),
   { name: 'RaAppBar' }
@@ -79,13 +75,6 @@ const AppBar = (props: any): JSX.Element => {
   const dispatch = useDispatch();
   const isXSmall = useMediaQuery<Theme>((theme) => theme.breakpoints.down('xs'));
   const translate = useTranslate();
-  const isSuperUser = useSelector((state: CustomeAppState) => state.customReducer.isSuperUser);
-
-  const icon = isSuperUser ? (
-    <AccountCircle className={classes.superUser} />
-  ) : (
-    <AccountCircle className={classes.normalUser} />
-  );
 
   return (
     <HideOnScroll>
@@ -112,7 +101,7 @@ const AppBar = (props: any): JSX.Element => {
             </IconButton>
           </Tooltip>
           <Link to="/">
-            <AppMainLogo className={classes.titleIcon} />
+            <AppMainLogo className={classes.titleIcon} fill="#ffffff" />
           </Link>
           {Children.count(children) === 0 ? (
             <Typography variant="h6" color="inherit" className={classes.title} id="react-admin-title" />
@@ -121,7 +110,7 @@ const AppBar = (props: any): JSX.Element => {
           )}
           <span className={classes.spacer} />
           <LoadingIndicator />
-          {cloneElement(<UserMenu icon={icon} />, { logout })}
+          {cloneElement(<UserMenu icon={<AccountCircle />} />, { logout })}
         </Toolbar>
       </MUIAppBar>
     </HideOnScroll>
