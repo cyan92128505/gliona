@@ -6,10 +6,6 @@ import localStorageDataProvider from 'ra-data-local-storage';
 import { firebaseAuthProvider } from './auth_provider';
 import { StateCodeType } from './error_provider';
 
-import GeneralResponse from '../models/general_response';
-import AccountInfo from '../models/user/account_info';
-import * as ownerType from '../models/group/owner';
-
 import env from '../config/env';
 import SettingModel from '../resources/setting/model';
 import { CustomeAppState } from '../types';
@@ -103,141 +99,42 @@ class DataProviderFactory {
   }
 
   getList<T extends rc.Record>(resource: string, params: rc.GetListParams): Promise<rc.GetListResult<T>> {
-    if (resource === this.settingFlag) {
-      return this.localStorage.getList(resource, params);
-    }
-
-    return new Promise((resolve) => {
-      const data: rc.GetListResult<T> = {} as rc.GetListResult<T>;
-      const list = [];
-      if (resource === this.settingFlag) {
-        resolve(data);
-        list.push(params);
-      }
-    });
+    return this.localStorage.getList(resource, params);
   }
 
   getOne<T extends rc.Record>(resource: string, params: rc.GetOneParams): Promise<rc.GetOneResult<T>> {
-    if (resource === this.settingFlag) {
-      return this.localStorage.getOne(resource, params);
-    }
-
-    return new Promise((resolve) => {
-      const data: rc.GetOneResult<T> = {} as rc.GetOneResult<T>;
-      const list = [];
-      if (resource === this.settingFlag) {
-        resolve(data);
-        list.push(params);
-      }
-    });
+    return this.localStorage.getOne(resource, params);
   }
 
   getMany<T extends rc.Record>(resource: string, params: rc.GetManyParams): Promise<rc.GetManyResult<T>> {
-    if (resource === this.settingFlag) {
-      return this.localStorage.getMany(resource, params);
-    }
-
-    return new Promise((resolve) => {
-      const data: rc.GetManyResult<T> = {} as rc.GetManyResult<T>;
-      const list = [];
-      if (resource === this.settingFlag) {
-        resolve(data);
-        list.push(params);
-      }
-    });
+    return this.localStorage.getMany(resource, params);
   }
 
   getManyReference<T extends rc.Record>(
     resource: string,
     params: rc.GetManyReferenceParams
   ): Promise<rc.GetManyReferenceResult<T>> {
-    if (resource === this.settingFlag) {
-      return this.localStorage.getManyReference(resource, params);
-    }
-
-    return new Promise((resolve) => {
-      const data: rc.GetManyReferenceResult<T> = {} as rc.GetManyReferenceResult<T>;
-      const list = [];
-      if (resource === this.settingFlag) {
-        resolve(data);
-        list.push(params);
-      }
-    });
+    return this.localStorage.getManyReference(resource, params);
   }
 
   update<T extends rc.Record>(resource: string, params: rc.UpdateParams): Promise<rc.UpdateResult<T>> {
-    if (resource === this.settingFlag) {
-      return this.localStorage.update(resource, params);
-    }
-
-    return new Promise((resolve) => {
-      const data: rc.UpdateResult<T> = {} as rc.UpdateResult<T>;
-      const list = [];
-      if (resource === this.settingFlag) {
-        resolve(data);
-        list.push(params);
-      }
-    });
+    return this.localStorage.update(resource, params);
   }
 
   updateMany(resource: string, params: rc.UpdateManyParams): Promise<rc.UpdateManyResult> {
-    if (resource === this.settingFlag) {
-      return this.localStorage.updateMany(resource, params);
-    }
-
-    return new Promise((resolve) => {
-      const data: rc.UpdateManyResult = {} as rc.UpdateManyResult;
-      const list = [];
-      if (resource === this.settingFlag) {
-        resolve(data);
-        list.push(params);
-      }
-    });
+    return this.localStorage.updateMany(resource, params);
   }
 
   create<T extends rc.Record>(resource: string, params: rc.CreateParams): Promise<rc.CreateResult<T>> {
-    if (resource === this.settingFlag) {
-      return this.localStorage.create(resource, params);
-    }
-
-    return new Promise((resolve) => {
-      const data: rc.CreateResult<T> = {} as rc.CreateResult<T>;
-      const list = [];
-      if (resource === this.settingFlag) {
-        resolve(data);
-        list.push(params);
-      }
-    });
+    return this.localStorage.create(resource, params);
   }
 
   delete<T extends rc.Record>(resource: string, params: rc.DeleteParams): Promise<rc.DeleteResult<T>> {
-    if (resource === this.settingFlag) {
-      return this.localStorage.delete(resource, params);
-    }
-
-    return new Promise((resolve) => {
-      const data: rc.DeleteResult<T> = {} as rc.DeleteResult<T>;
-      const list = [];
-      if (resource === this.settingFlag) {
-        resolve(data);
-        list.push(params);
-      }
-    });
+    return this.localStorage.delete(resource, params);
   }
 
   deleteMany(resource: string, params: rc.DeleteManyParams): Promise<rc.DeleteManyResult> {
-    if (resource === this.settingFlag) {
-      return this.localStorage.deleteMany(resource, params);
-    }
-
-    return new Promise((resolve) => {
-      const data: rc.DeleteManyResult = {} as rc.DeleteManyResult;
-      const list = [];
-      if (resource === this.settingFlag) {
-        resolve(data);
-        list.push(params);
-      }
-    });
+    return this.localStorage.deleteMany(resource, params);
   }
 
   async getSidebarSetting(): Promise<boolean | null> {
