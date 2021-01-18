@@ -4,7 +4,7 @@ import { BuyerCreate } from './buyer_create';
 import { BuyerEdit } from './buyer_edit';
 
 const BuyerResource = {
-  name: 'Buyer',
+  name: 'buyer',
   list: BuyerList,
   icon: BuyerIcon,
   create: BuyerCreate,

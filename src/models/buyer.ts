@@ -15,6 +15,14 @@ export class Buyer {
     this.ratingTable = ratingTable;
     this.description = description;
   }
+
+  static propId = 'id';
+
+  static propName = 'name';
+
+  static propRatingTable = 'ratingTable';
+
+  static propDescription = 'description';
 }
 
 export default Buyer;

@@ -4,7 +4,7 @@ import { BuyerSchemaCreate } from './buyer_schema_create';
 import { BuyerSchemaEdit } from './buyer_schema_edit';
 
 const BuyerSchemaResource = {
-  name: 'BuyerSchema',
+  name: 'buyerSchema',
   list: BuyerSchemaList,
   icon: BuyerSchemaIcon,
   create: BuyerSchemaCreate,

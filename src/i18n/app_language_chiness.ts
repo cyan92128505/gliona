@@ -39,6 +39,41 @@ const zhTW: I18n = {
         sidebar: '側邊欄',
       },
     },
+    buyer: {
+      name: '買家 |||| 買家',
+      fields: {
+        id: '編號',
+        name: '名稱',
+        ratingTable: '評分表',
+        description: '描述',
+      },
+    },
+    buyerSchema: {
+      name: '買家模板 |||| 買家模板',
+      fields: {
+        id: '編號',
+        name: '名稱',
+        ratingList: '評分基準',
+        description: '描述',
+      },
+    },
+    ratingType: {
+      name: '評分類別 |||| 評分類別',
+      fields: {
+        id: '編號',
+        name: '名稱',
+        baseNumber: '基底分數',
+      },
+    },
+    rating: {
+      name: '評分 |||| 評分',
+      fields: {
+        id: '編號',
+        name: '名稱',
+        ratingType: '評分類別',
+        score: '分數',
+      },
+    },
   },
 };
 

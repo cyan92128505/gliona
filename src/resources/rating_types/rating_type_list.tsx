@@ -1,7 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import React from 'react';
-import { Datagrid, List, ListProps, TextField } from 'react-admin'; // eslint-disable-line import/no-unresolved
+import { Datagrid, List, ListProps, TextField } from 'react-admin';
+
+import { RatingType } from '../../models/rating_type';
 
 export const RatingIcon = StarBorderIcon;
 
@@ -26,8 +28,9 @@ const RatingList: React.FC<ListProps> = (props) => {
   return (
     <List {...props}>
       <Datagrid optimized>
-        <TextField source="id" />
-        <TextField source="name" cellClassName={classes.title} />
+        <TextField source={RatingType.propId} />
+        <TextField source={RatingType.propName} cellClassName={classes.title} />
+        <TextField source={RatingType.propBaseNumber} cellClassName={classes.title} />
       </Datagrid>
     </List>
   );

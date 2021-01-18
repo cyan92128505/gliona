@@ -10,6 +10,12 @@ export class RatingType {
     this.name = name;
     this.baseNumber = baseNumber;
   }
+
+  static propId = 'id';
+
+  static propName = 'name';
+
+  static propBaseNumber = 'baseNumber';
 }
 
 export default RatingType;

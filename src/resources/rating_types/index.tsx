@@ -4,7 +4,7 @@ import { RatingTypeCreate } from './rating_type_create';
 import { RatingTypeEdit } from './rating_type_edit';
 
 const RatingTypeResource = {
-  name: 'RatingType',
+  name: 'ratingType',
   list: RatingTypeList,
   icon: RatingTypeIcon,
   edit: RatingTypeEdit,

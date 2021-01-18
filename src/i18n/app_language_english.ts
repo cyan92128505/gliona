@@ -39,6 +39,41 @@ const enUs: I18n = {
         sidebar: 'sidebar',
       },
     },
+    buyer: {
+      name: 'Buyer |||| Buyers',
+      fields: {
+        id: 'id',
+        name: 'name',
+        ratingTable: 'ratingTable',
+        description: 'description',
+      },
+    },
+    buyerSchema: {
+      name: 'BuyerSchema |||| BuyerSchema',
+      fields: {
+        id: 'id',
+        name: 'name',
+        ratingList: 'ratingList',
+        description: 'description',
+      },
+    },
+    ratingType: {
+      name: 'RatingType |||| RatingType',
+      fields: {
+        id: 'id',
+        name: 'name',
+        baseNumber: 'baseNumber',
+      },
+    },
+    rating: {
+      name: 'Rating |||| Rating',
+      fields: {
+        id: 'id',
+        name: 'name',
+        ratingType: 'ratingType',
+        score: 'score',
+      },
+    },
   },
 };
 

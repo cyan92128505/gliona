@@ -1,7 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles';
 import PetsIcon from '@material-ui/icons/Pets';
 import React from 'react';
-import { Datagrid, List, ListProps, TextField } from 'react-admin'; // eslint-disable-line import/no-unresolved
+import { Datagrid, List, ListProps, TextField } from 'react-admin';
+
+import { Buyer } from '../../models/buyer';
 
 export const BuyerIcon = PetsIcon;
 
@@ -26,8 +28,9 @@ const BuyerList: React.FC<ListProps> = (props) => {
   return (
     <List {...props}>
       <Datagrid optimized>
-        <TextField source="id" />
-        <TextField source="name" cellClassName={classes.title} />
+        <TextField source={Buyer.propId} />
+        <TextField source={Buyer.propName} cellClassName={classes.title} />
+        <TextField source={Buyer.propDescription} cellClassName={classes.title} />
       </Datagrid>
     </List>
   );

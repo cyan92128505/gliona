@@ -15,6 +15,14 @@ export class BuyerSchema {
     this.ratingList = ratingList;
     this.description = description;
   }
+
+  static propId = 'id';
+
+  static propName = 'name';
+
+  static propRatingList = 'ratingList';
+
+  static propDescription = 'description';
 }
 
 export default BuyerSchema;

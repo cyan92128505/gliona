@@ -54,6 +54,49 @@ interface I18n {
         sidebar: string;
       };
     };
+    buyer: {
+      [key: string]: StringMap | string;
+      name: string;
+      fields: {
+        [key: string]: StringMap | string;
+        id: string;
+        name: string;
+        ratingTable: string;
+        description: string;
+      };
+    };
+    buyerSchema: {
+      [key: string]: StringMap | string;
+      name: string;
+      fields: {
+        [key: string]: StringMap | string;
+        id: string;
+        name: string;
+        ratingList: string;
+        description: string;
+      };
+    };
+    ratingType: {
+      [key: string]: StringMap | string;
+      name: string;
+      fields: {
+        [key: string]: StringMap | string;
+        id: string;
+        name: string;
+        baseNumber: string;
+      };
+    };
+    rating: {
+      [key: string]: StringMap | string;
+      name: string;
+      fields: {
+        [key: string]: StringMap | string;
+        id: string;
+        name: string;
+        ratingType: string;
+        score: string;
+      };
+    };
   };
 }
 
@@ -99,6 +142,49 @@ interface I18nFunc {
         [key: string]: StringFuncMap | StringFunction;
         version: StringFunction;
         sidebar: StringFunction;
+      };
+    };
+    buyer: {
+      [key: string]: StringFuncMap | StringFunction;
+      name: StringFunction;
+      fields: {
+        [key: string]: StringFuncMap | StringFunction;
+        id: StringFunction;
+        name: StringFunction;
+        ratingTable: StringFunction;
+        description: StringFunction;
+      };
+    };
+    buyerSchema: {
+      [key: string]: StringFuncMap | StringFunction;
+      name: StringFunction;
+      fields: {
+        [key: string]: StringFuncMap | StringFunction;
+        id: StringFunction;
+        name: StringFunction;
+        ratingList: StringFunction;
+        description: StringFunction;
+      };
+    };
+    ratingType: {
+      [key: string]: StringFuncMap | StringFunction;
+      name: StringFunction;
+      fields: {
+        [key: string]: StringFuncMap | StringFunction;
+        id: StringFunction;
+        name: StringFunction;
+        baseNumber: StringFunction;
+      };
+    };
+    rating: {
+      [key: string]: StringFuncMap | StringFunction;
+      name: StringFunction;
+      fields: {
+        [key: string]: StringFuncMap | StringFunction;
+        id: StringFunction;
+        name: StringFunction;
+        ratingType: StringFunction;
+        score: StringFunction;
       };
     };
   };

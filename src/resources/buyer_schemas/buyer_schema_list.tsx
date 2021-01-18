@@ -1,7 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles';
 import CategorySharpIcon from '@material-ui/icons/CategorySharp';
 import React from 'react';
-import { Datagrid, List, ListProps, TextField } from 'react-admin'; // eslint-disable-line import/no-unresolved
+import { Datagrid, List, ListProps, TextField } from 'react-admin';
+
+import { BuyerSchema } from '../../models/buyer_schema';
 
 export const BuyerIcon = CategorySharpIcon;
 
@@ -26,8 +28,9 @@ const BuyerSchemaList: React.FC<ListProps> = (props) => {
   return (
     <List {...props}>
       <Datagrid optimized>
-        <TextField source="id" />
-        <TextField source="name" cellClassName={classes.title} />
+        <TextField source={BuyerSchema.propId} />
+        <TextField source={BuyerSchema.propName} cellClassName={classes.title} />
+        <TextField source={BuyerSchema.propDescription} cellClassName={classes.title} />
       </Datagrid>
     </List>
   );

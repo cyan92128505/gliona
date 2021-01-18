@@ -15,6 +15,14 @@ export class Rating {
     this.ratingType = ratingType;
     this.score = score;
   }
+
+  static propId = 'id';
+
+  static propName = 'name';
+
+  static propRatingType = 'ratingType';
+
+  static propScore = 'score';
 }
 
 export default Rating;

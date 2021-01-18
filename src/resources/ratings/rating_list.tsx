@@ -1,7 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles';
 import GradeIcon from '@material-ui/icons/Grade';
 import React from 'react';
-import { Datagrid, List, ListProps, TextField } from 'react-admin'; // eslint-disable-line import/no-unresolved
+import { Datagrid, List, ListProps, TextField } from 'react-admin';
+
+import { Rating } from '../../models/rating';
 
 export const RatingIcon = GradeIcon;
 
@@ -26,8 +28,9 @@ const RatingList: React.FC<ListProps> = (props) => {
   return (
     <List {...props}>
       <Datagrid optimized>
-        <TextField source="id" />
-        <TextField source="name" cellClassName={classes.title} />
+        <TextField source={Rating.propId} />
+        <TextField source={Rating.propName} cellClassName={classes.title} />
+        <TextField source={Rating.propScore} cellClassName={classes.title} />
       </Datagrid>
     </List>
   );

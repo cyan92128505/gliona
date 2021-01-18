@@ -8,7 +8,6 @@ import { AppBar as MUIAppBar, IconButton, Toolbar, Tooltip, Typography, useMedia
 import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-
 import { setSidebarVisibility, useTranslate } from 'ra-core';
 import { LoadingIndicator, UserMenu, HideOnScroll } from 'ra-ui-materialui';
 
@@ -104,7 +103,9 @@ const AppBar = (props: any): JSX.Element => {
             <AppMainLogo className={classes.titleIcon} fill="#ffffff" />
           </Link>
           {Children.count(children) === 0 ? (
-            <Typography variant="h6" color="inherit" className={classes.title} id="react-admin-title" />
+            <Typography variant="h6" color="inherit" className={classes.title} id="react-admin-title">
+              GLIONA {'  '}
+            </Typography>
           ) : (
             children
           )}
