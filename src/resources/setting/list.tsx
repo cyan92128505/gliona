@@ -3,9 +3,8 @@ import { useDispatch } from 'react-redux';
 
 import SettingsIcon from '@material-ui/icons/Settings';
 import { Button, ButtonGroup, Box, Container, Card, Grid, Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 
-import { useTranslate, useLocale, useSetLocale } from 'react-admin';
+import { useTranslate, useLocale, useSetLocale, Title } from 'react-admin';
 import { setLocale as setLocaleAction } from '../../redux/actions';
 import { i18nProxy } from '../../i18n/language_proxy';
 
@@ -16,7 +15,6 @@ function SettingList(): JSX.Element {
   const locale = useLocale();
   const setLocale = useSetLocale();
   const dispatch = useDispatch();
-
   const changeLocale = (Locale: string) => {
     setLocale(Locale);
     dispatch(setLocaleAction(Locale));
@@ -24,6 +22,7 @@ function SettingList(): JSX.Element {
 
   return (
     <Container>
+      <Title defaultTitle={translate(i18nProxy.resources.setting.name())} />
       <Box m={2}> </Box>
       <Grid container direction="column" spacing={2}>
         <Grid xs={12} item>

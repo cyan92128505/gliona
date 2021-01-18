@@ -13,6 +13,7 @@ import { LoadingIndicator, UserMenu, HideOnScroll } from 'ra-ui-materialui';
 
 import { AppMainLogo } from './app_icons';
 import { CustomeAppState } from '../../types';
+import env from '../../config/env';
 
 const useStyles = makeStyles(
   (theme) => ({
@@ -104,7 +105,8 @@ const AppBar = (props: any): JSX.Element => {
           </Link>
           {Children.count(children) === 0 ? (
             <Typography variant="h6" color="inherit" className={classes.title} id="react-admin-title">
-              GLIONA {'  '}
+              {isXSmall ? '' : `${env.appName}`.toUpperCase()}
+              {'  '}
             </Typography>
           ) : (
             children

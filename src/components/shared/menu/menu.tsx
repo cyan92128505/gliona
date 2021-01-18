@@ -90,7 +90,6 @@ const Menu: FC<CustomMenuProps> = (props) => {
       {...rest}
     >
       {hasDashboard && <DashboardMenuItem onClick={onMenuClick} dense={dense} sidebarIsOpen={open} />}
-      {customMenuItem.map((e) => e)}
       {resources
         .filter((r) => r.hasList)
         .map((resource) => (
@@ -104,6 +103,7 @@ const Menu: FC<CustomMenuProps> = (props) => {
             sidebarIsOpen={open}
           />
         ))}
+      {customMenuItem.map((e) => e)}
       {isXSmall && logout}
     </div>
   );
