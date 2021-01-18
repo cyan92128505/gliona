@@ -10,3 +10,4 @@ export const RatingTypeEdit: React.FC<CreateProps> = (props) => (
     </SimpleForm>
   </Create>
 );
+export default RatingTypeEdit;

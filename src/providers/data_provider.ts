@@ -1,4 +1,4 @@
-import axios, { AxiosInstance, AxiosResponse } from 'axios';
+import axios, { AxiosInstance } from 'axios';
 
 import * as rc from 'ra-core';
 import simpleRestProvider from 'ra-data-simple-rest';
@@ -7,7 +7,7 @@ import { firebaseAuthProvider } from './auth_provider';
 import { StateCodeType } from './error_provider';
 
 import env from '../config/env';
-import SettingModel from '../resources/setting/model';
+import SettingModel from '../models/setting_model';
 import { CustomeAppState } from '../types';
 
 class DataProviderFactory {
