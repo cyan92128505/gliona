@@ -22,14 +22,6 @@ const useStyles = makeStyles((theme) => ({
     background: 'url(https://source.unsplash.com/random/1600x900)',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    '&::after': {
-      content: `"${env.copyRight}"`,
-      color: '#fff',
-      position: 'absolute',
-      bottom: 8,
-      right: 8,
-      zIndex: 1,
-    },
   },
   card: {
     minWidth: 300,
