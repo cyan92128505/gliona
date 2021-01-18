@@ -1,9 +1,13 @@
 import { RatingType } from './rating_type';
+
 export class BuyerSchema {
   id: number;
-  name: string = '';
+
+  name = '';
+
   ratingList: RatingType[] = [];
-  description: string = '';
+
+  description = '';
 
   constructor(id: number, schemaName: string, ratingList: RatingType[], description: string) {
     this.id = id;
@@ -12,3 +16,5 @@ export class BuyerSchema {
     this.description = description;
   }
 }
+
+export default BuyerSchema;

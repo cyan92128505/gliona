@@ -1,7 +1,9 @@
 export class RatingType {
   id: number;
-  name: string = ``;
-  baseNumber: number = 1;
+
+  name = ``;
+
+  baseNumber = 1;
 
   constructor(id: number, name: string, baseNumber: number) {
     this.id = id;
@@ -9,3 +11,5 @@ export class RatingType {
     this.baseNumber = baseNumber;
   }
 }
+
+export default RatingType;

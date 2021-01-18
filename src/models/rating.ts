@@ -2,9 +2,12 @@ import { RatingType } from './rating_type';
 
 export class Rating {
   id: number;
-  name: string = ``;
+
+  name = ``;
+
   ratingType: RatingType;
-  score: number = 0;
+
+  score = 0;
 
   constructor(id: number, name: string, ratingType: RatingType, score: number) {
     this.id = id;
@@ -13,3 +16,5 @@ export class Rating {
     this.score = score;
   }
 }
+
+export default Rating;

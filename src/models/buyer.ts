@@ -2,9 +2,12 @@ import { Rating } from './rating';
 
 export class Buyer {
   id: number;
-  name: string = '';
+
+  name = '';
+
   ratingTable: Rating[] = [];
-  description: string = '';
+
+  description = '';
 
   constructor(id: number, name: string, ratingTable: Rating[], description: string) {
     this.id = id;
@@ -13,3 +16,5 @@ export class Buyer {
     this.description = description;
   }
 }
+
+export default Buyer;
