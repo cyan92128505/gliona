@@ -4,7 +4,7 @@ import { Field, withTypes } from 'react-final-form';
 import { useLocation } from 'react-router-dom';
 import { Notification, useTranslate, useLogin, useNotify } from 'react-admin';
 import { LoginProps } from 'ra-ui-materialui/lib/auth/Login';
-import { Button, Card, CardActions, CircularProgress, TextField } from '@material-ui/core';
+import { Box, Button, Card, CardActions, CircularProgress, Grid, TextField, Paper } from '@material-ui/core';
 import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { customTheme } from '../../theme/custom_theme';
@@ -37,9 +37,6 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '2em',
     display: 'flex',
     justifyContent: 'center',
-  },
-  icon: {
-    backgroundColor: theme.palette.primary.main,
   },
   hint: {
     marginTop: '1em',
@@ -122,7 +119,17 @@ const Login = () => {
           <div className={classes.main}>
             <Card className={classes.card}>
               <div className={classes.avatar}>
-                <AppMainLogo fill="#000000" />
+                <Grid container direction="column" justify="center" alignItems="center">
+                  <Grid item xs={12}>
+                    <AppMainLogo width="128px" height="128px" fill={customTheme.palette.secondary.main} />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <h3>GLIONA</h3>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <span>manage your customer</span>
+                  </Grid>
+                </Grid>
               </div>
               <div className={classes.form}>
                 <div className={classes.input}>
@@ -143,6 +150,10 @@ const Login = () => {
                 </Button>
               </CardActions>
             </Card>
+            <Box color="primary" mt={1}>
+              <div>username: test@gliona.com</div>
+              <div>password: test1234</div>
+            </Box>
             <Notification />
           </div>
         </form>

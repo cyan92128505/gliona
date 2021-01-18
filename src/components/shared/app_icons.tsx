@@ -11,9 +11,9 @@ export const Unsplash: React.FC<React.SVGProps<SVGSVGElement>> = (props: React.S
 );
 
 export const AppMainLogo: React.FC<React.SVGProps<SVGSVGElement>> = (props: React.SVGProps<SVGSVGElement>) => {
-  const { fill } = props;
+  const { fill, width, height } = props;
   return (
-    <svg width="36px" height="36px" viewBox="0 0 559 559">
+    <svg width={width ?? '36px'} height={height ?? '36px'} viewBox="0 0 559 559">
       <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g id="LION" fill={fill ?? ''}>
           <path
