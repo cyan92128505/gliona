@@ -14,10 +14,9 @@ import './index.css';
 import Layout from './pages/layout';
 import Login from './pages/login/login';
 import customRoutes from './pages/custom_route';
-import { MainObject } from './models/main_object';
 import Dashboard from './pages/dashboard/dashboard';
 import reportWebVitals from './reportWebVitals';
-import Resourse from './resources';
+import AppResources from './resources';
 import { customTheme } from './theme/custom_theme';
 import env from './config/env';
 import customReducers from './redux/reducers';
@@ -60,32 +59,32 @@ async function initial() {
       initialState={initialState}
     >
       <Resource
-        name={Resourse.BuyerResource.name}
-        list={Resourse.BuyerResource.list}
-        icon={Resourse.BuyerResource.icon}
-        create={Resourse.BuyerResource.create}
-        edit={Resourse.BuyerResource.edit}
+        name={AppResources.BuyerResource.name}
+        list={AppResources.BuyerResource.list}
+        icon={AppResources.BuyerResource.icon}
+        create={AppResources.BuyerResource.create}
+        edit={AppResources.BuyerResource.edit}
       />
       <Resource
-        name={Resourse.BuyerSchemaResource.name}
-        list={Resourse.BuyerSchemaResource.list}
-        icon={Resourse.BuyerSchemaResource.icon}
-        create={Resourse.BuyerSchemaResource.create}
-        edit={Resourse.BuyerSchemaResource.edit}
+        name={AppResources.BuyerSchemaResource.name}
+        list={AppResources.BuyerSchemaResource.list}
+        icon={AppResources.BuyerSchemaResource.icon}
+        create={AppResources.BuyerSchemaResource.create}
+        edit={AppResources.BuyerSchemaResource.edit}
       />
       <Resource
-        name={Resourse.RatingResource.name}
-        list={Resourse.RatingResource.list}
-        icon={Resourse.RatingResource.icon}
-        create={Resourse.RatingResource.create}
-        edit={Resourse.RatingResource.edit}
+        name={AppResources.RatingResource.name}
+        list={AppResources.RatingResource.list}
+        icon={AppResources.RatingResource.icon}
+        create={AppResources.RatingResource.create}
+        edit={AppResources.RatingResource.edit}
       />
       <Resource
-        name={Resourse.RatingTypeResource.name}
-        list={Resourse.RatingTypeResource.list}
-        icon={Resourse.RatingTypeResource.icon}
-        create={Resourse.RatingTypeResource.create}
-        edit={Resourse.RatingTypeResource.edit}
+        name={AppResources.RatingTypeResource.name}
+        list={AppResources.RatingTypeResource.list}
+        icon={AppResources.RatingTypeResource.icon}
+        create={AppResources.RatingTypeResource.create}
+        edit={AppResources.RatingTypeResource.edit}
       />
     </Admin>,
     document.getElementById('root')

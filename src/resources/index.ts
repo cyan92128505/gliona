@@ -3,11 +3,11 @@ import BuyerSchemaResource from './buyer_schemas';
 import RatingResource from './ratings';
 import RatingTypeResource from './rating_types';
 
-const Resources = {
+const AppResources = {
   BuyerResource,
   BuyerSchemaResource,
   RatingResource,
   RatingTypeResource,
 };
 
-export default Resources;
+export default AppResources;
