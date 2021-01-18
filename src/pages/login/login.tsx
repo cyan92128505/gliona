@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '100vh',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    background: 'url(https://source.unsplash.com/1600x900/?animal,lion)',
+    background: 'url(https://source.unsplash.com/random/1600x900)',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     '&::after': {
@@ -126,15 +126,9 @@ const Login = () => {
             <Card className={classes.card}>
               <div className={classes.avatar}>
                 <Grid container direction="column" justify="center" alignItems="center">
-                  <Grid item xs={12}>
-                    <AppMainLogo width="128px" height="128px" fill={customTheme.palette.secondary.main} />
-                  </Grid>
-                  <Grid item xs={12}>
-                    <h3>GLIONA</h3>
-                  </Grid>
-                  <Grid item xs={12}>
-                    <span>manage your customer</span>
-                  </Grid>
+                  <AppMainLogo width="128px" height="128px" fill={customTheme.palette.secondary.main} />
+                  <h3>GLIONA</h3>
+                  <span>manage your customer</span>
                 </Grid>
               </div>
               <div className={classes.form}>
