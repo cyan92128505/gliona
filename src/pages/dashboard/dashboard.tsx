@@ -1,28 +1,25 @@
-import { Button } from '@material-ui/core';
+import 'leaflet/dist/leaflet.css';
+import { makeStyles } from '@material-ui/core';
 import React from 'react';
-import { IUIStore, UIStore } from '../../providers/ui_store';
+import { MapContainer, Marker, Popup, TileLayer, useMapEvents } from 'react-leaflet';
 import './dashboard.css';
 
-function toggleMode(s: IUIStore) {
-  s.isDarkMode = !s.isDarkMode;
-}
+const useStyles = makeStyles((theme) => ({
+  main: {
+    minHeight: '600px',
+  },
+}));
 
 function Dashboard() {
-  const isDarkMode = UIStore.useState((s) => s.isDarkMode);
-
+  const classes = useStyles();
   return (
-    <div
-      className="dashboard"
-      style={{
-        background: isDarkMode ? '#282c34' : 'white',
-        color: isDarkMode ? 'white' : '#282c34',
-      }}
-    >
-      <header className="dahsboard-header">
-        <Button variant="contained" color="primary" onClick={() => UIStore.update(toggleMode)}>
-          Toggle Dark Mode
-        </Button>{' '}
-      </header>
+    <div>
+      <MapContainer className={classes.main} center={[23.7393441, 120.4262101]} zoom={10} scrollWheelZoom>
+        <TileLayer
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+      </MapContainer>
     </div>
   );
 }
