@@ -10,7 +10,6 @@ import { ThemeProvider } from '@material-ui/styles';
 import { customTheme } from '../../theme/custom_theme';
 import { AppMainLogo } from '../../components/shared/app_icons';
 import { setSuperUser } from '../../redux/actions';
-import env from '../../config/env';
 
 const useStyles = makeStyles((theme) => ({
   main: {

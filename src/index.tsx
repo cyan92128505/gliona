@@ -34,15 +34,6 @@ async function initial() {
     initialState = dataProvider.appState;
   }
 
-  const mainObject = new MainObject();
-
-  // const dataProvider = localStorageDataProvider({
-  //   defaultData: mainObject,
-  //   localStorageKey: 'gliona',
-  //   loggingEnabled: true,
-  //   localStorageUpdateDelay: 100,
-  // });
-
   const i18nProvider = polyglotI18nProvider((locale) => {
     switch (locale) {
       case 'en':
@@ -72,16 +63,22 @@ async function initial() {
         name={Resourse.BuyerResource.name}
         list={Resourse.BuyerResource.list}
         icon={Resourse.BuyerResource.icon}
+        create={Resourse.BuyerResource.create}
+        edit={Resourse.BuyerResource.edit}
       />
       <Resource
         name={Resourse.BuyerSchemaResource.name}
         list={Resourse.BuyerSchemaResource.list}
         icon={Resourse.BuyerSchemaResource.icon}
+        create={Resourse.BuyerSchemaResource.create}
+        edit={Resourse.BuyerSchemaResource.edit}
       />
       <Resource
         name={Resourse.RatingResource.name}
         list={Resourse.RatingResource.list}
         icon={Resourse.RatingResource.icon}
+        create={Resourse.RatingResource.create}
+        edit={Resourse.RatingResource.edit}
       />
       <Resource
         name={Resourse.RatingTypeResource.name}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Create, CreateProps, SimpleForm, TextInput } from 'react-admin';
 
-export const RatingTypeEdit: React.FC<CreateProps> = (props) => (
+export const BuyerEdit: React.FC<CreateProps> = (props) => (
   <Create {...props}>
     <SimpleForm>
       <TextInput source="id" />
@@ -10,4 +10,4 @@ export const RatingTypeEdit: React.FC<CreateProps> = (props) => (
     </SimpleForm>
   </Create>
 );
-export default RatingTypeEdit;
+export default BuyerEdit;
