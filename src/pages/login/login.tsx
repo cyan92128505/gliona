@@ -19,6 +19,9 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '100vh',
     alignItems: 'center',
     justifyContent: 'flex-start',
+    background: 'url(https://source.unsplash.com/1600x900/?animal,lion)',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
     '&::after': {
       content: `"${env.copyRight}"`,
       color: '#fff',
@@ -40,8 +43,11 @@ const useStyles = makeStyles((theme) => ({
   },
   hint: {
     marginTop: '1em',
+    marginBottom: '1em',
     display: 'flex',
     justifyContent: 'center',
+    flexDirection: 'column',
+    alignItems: 'stretch',
     color: theme.palette.grey[500],
   },
   form: {
@@ -150,11 +156,15 @@ const Login = () => {
                 </Button>
               </CardActions>
             </Card>
-            <Box color="primary" mt={1}>
-              <div>username: test@gliona.com</div>
-              <div>password: test1234</div>
-            </Box>
             <Notification />
+            <Box className={classes.hint}>
+              <div>
+                <b>username:</b> test@gliona.com
+              </div>
+              <div>
+                <b>password:</b> test1234
+              </div>
+            </Box>
           </div>
         </form>
       )}
