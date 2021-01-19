@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import React, { cloneElement, Children } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { cloneElement } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { AppBar as MUIAppBar, IconButton, Toolbar, Tooltip, Typography, useMediaQuery, Theme } from '@material-ui/core';
@@ -12,8 +12,6 @@ import { setSidebarVisibility, useTranslate } from 'ra-core';
 import { LoadingIndicator, UserMenu, HideOnScroll } from 'ra-ui-materialui';
 
 import { AppMainLogo } from './app_icons';
-import { CustomeAppState } from '../../types';
-import env from '../../config/env';
 
 const useStyles = makeStyles(
   (theme) => ({
@@ -103,14 +101,7 @@ const AppBar = (props: any): JSX.Element => {
           <Link to="/">
             <AppMainLogo className={classes.titleIcon} fill="#ffffff" />
           </Link>
-          {Children.count(children) === 0 ? (
-            <Typography variant="h6" color="inherit" className={classes.title} id="react-admin-title">
-              {isXSmall ? '' : `${env.appName}`.toUpperCase()}
-              {'  '}
-            </Typography>
-          ) : (
-            children
-          )}
+          <Typography variant="h6" color="inherit" className={classes.title} id="react-admin-title" />
           <span className={classes.spacer} />
           <LoadingIndicator />
           {cloneElement(<UserMenu icon={<AccountCircle />} />, { logout })}

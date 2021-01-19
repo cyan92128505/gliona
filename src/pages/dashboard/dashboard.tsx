@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core';
 import React from 'react';
 import { MapContainer, Marker, Popup, TileLayer, useMapEvents } from 'react-leaflet';
 import './dashboard.css';
+import { Title } from 'react-admin';
+import env from '../../config/env';
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -14,6 +16,7 @@ function Dashboard() {
   const classes = useStyles();
   return (
     <div>
+      <Title defaultTitle={env.appName?.toUpperCase()} />
       <MapContainer className={classes.main} center={[23.7393441, 120.4262101]} zoom={10} scrollWheelZoom>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
