@@ -9,6 +9,7 @@ import { StateCodeType } from './error_provider';
 import env from '../config/env';
 import SettingModel from '../models/setting_model';
 import { CustomeAppState } from '../types';
+import { settingFlag, sidebarSettingFlag, localeFlag } from './repositories/setting';
 
 class DataProviderFactory {
   appState = {
@@ -22,12 +23,6 @@ class DataProviderFactory {
       locale: 'zh',
     },
   };
-
-  settingFlag = 'setting';
-
-  sidebarSettingFlag = 'sidebar';
-
-  localeFlag = 'locale';
 
   instance: AxiosInstance;
 
@@ -87,7 +82,7 @@ class DataProviderFactory {
     this.simpleRestProvider = simpleRestProvider(`${process.env.REACT_APP_END_POINT}`, axiosApiInstance.post);
 
     this.localStorage = localStorageDataProvider({
-      defaultData: { setting: [{ id: this.sidebarSettingFlag, value: true }] },
+      defaultData: { setting: [{ id: sidebarSettingFlag, value: true }] },
       localStorageKey: `${env.appName}`,
       loggingEnabled: false,
       localStorageUpdateDelay: 100,
@@ -139,7 +134,9 @@ class DataProviderFactory {
 
   async getSidebarSetting(): Promise<boolean | null> {
     try {
-      const setting = await this.getOne<SettingModel>(this.settingFlag, { id: this.sidebarSettingFlag });
+      const setting = await this.getOne<SettingModel>(settingFlag, {
+        id: sidebarSettingFlag,
+      });
       return setting.data != null ? !!setting.data.value : true;
     } catch (error) {
       return null;
@@ -150,21 +147,21 @@ class DataProviderFactory {
     const olderValue = await this.getSidebarSetting();
 
     if (olderValue == null) {
-      await this.create<SettingModel>(this.settingFlag, {
+      await this.create<SettingModel>(settingFlag, {
         data: {
-          id: this.sidebarSettingFlag,
+          id: sidebarSettingFlag,
           value,
         },
       });
     } else {
-      await this.update<SettingModel>(this.settingFlag, {
-        id: this.sidebarSettingFlag,
+      await this.update<SettingModel>(settingFlag, {
+        id: sidebarSettingFlag,
         data: {
-          id: this.sidebarSettingFlag,
+          id: sidebarSettingFlag,
           value,
         },
         previousData: {
-          id: this.sidebarSettingFlag,
+          id: sidebarSettingFlag,
           value,
         },
       });
@@ -173,7 +170,9 @@ class DataProviderFactory {
 
   async getLocale(): Promise<string | null> {
     try {
-      const setting = await this.getOne<SettingModel>(this.settingFlag, { id: this.localeFlag });
+      const setting = await this.getOne<SettingModel>(settingFlag, {
+        id: localeFlag,
+      });
       return setting.data != null ? `${setting.data.value}` : null;
     } catch (error) {
       return null;
@@ -184,21 +183,21 @@ class DataProviderFactory {
     const olderValue = await this.getLocale();
 
     if (olderValue == null) {
-      await this.create<SettingModel>(this.settingFlag, {
+      await this.create<SettingModel>(settingFlag, {
         data: {
-          id: this.localeFlag,
+          id: localeFlag,
           value,
         },
       });
     } else {
-      await this.update<SettingModel>(this.settingFlag, {
-        id: this.localeFlag,
+      await this.update<SettingModel>(settingFlag, {
+        id: localeFlag,
         data: {
-          id: this.localeFlag,
+          id: localeFlag,
           value,
         },
         previousData: {
-          id: this.localeFlag,
+          id: localeFlag,
           value,
         },
       });
