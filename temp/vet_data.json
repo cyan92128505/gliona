@@ -1,0 +1,532 @@
+[
+  {
+    "vname": "101台北貓動物醫院",
+    "tiems": 4,
+    "vets": 3,
+    "talk": 5,
+    "target": 5,
+    "cutomer": 4,
+    "env": 5,
+    "total": 26
+  },
+  {
+    "vname": "文藝獸醫院",
+    "tiems": 3,
+    "vets": 3,
+    "talk": 4,
+    "target": 4,
+    "cutomer": 5,
+    "env": 4,
+    "total": 23
+  },
+  {
+    "vname": "東京頂尖動物醫院",
+    "tiems": 3,
+    "vets": 2,
+    "talk": 4,
+    "target": 4,
+    "cutomer": 4,
+    "env": 5,
+    "total": 22
+  },
+  {
+    "vname": "中山動物醫院",
+    "tiems": 5,
+    "vets": 3,
+    "talk": 2,
+    "target": 0,
+    "cutomer": 4,
+    "env": 5,
+    "total": 19
+  },
+  {
+    "vname": "小王子動物醫院",
+    "tiems": 2,
+    "vets": 3,
+    "talk": 4,
+    "target": 2,
+    "cutomer": 3,
+    "env": 5,
+    "total": 19
+  },
+  {
+    "vname": "永信動物醫院",
+    "tiems": 2,
+    "vets": 2,
+    "talk": 5,
+    "target": 3,
+    "cutomer": 3,
+    "env": 4,
+    "total": 19
+  },
+  {
+    "vname": "祐熙動物醫院",
+    "tiems": 2,
+    "vets": 2,
+    "talk": 5,
+    "target": 2,
+    "cutomer": 3,
+    "env": 4,
+    "total": 18
+  },
+  {
+    "vname": "晨光動物醫院",
+    "tiems": 4,
+    "vets": 1,
+    "talk": 5,
+    "target": 2,
+    "cutomer": 3,
+    "env": 3,
+    "total": 18
+  },
+  {
+    "vname": "曼哈頓動物醫院",
+    "tiems": 2,
+    "vets": 3,
+    "talk": 4,
+    "target": 1,
+    "cutomer": 3,
+    "env": 4,
+    "total": 17
+  },
+  {
+    "vname": "上群動物醫院",
+    "tiems": 1,
+    "vets": 2,
+    "talk": 3,
+    "target": 2,
+    "cutomer": 3,
+    "env": 5,
+    "total": 16
+  },
+  {
+    "vname": "隆記動物醫院",
+    "tiems": 1,
+    "vets": 1,
+    "talk": 5,
+    "target": 3,
+    "cutomer": 3,
+    "env": 3,
+    "total": 16
+  },
+  {
+    "vname": "太僕動物醫院(龍江院)",
+    "tiems": 4,
+    "vets": 2,
+    "talk": 4,
+    "target": 0,
+    "cutomer": 3,
+    "env": 3,
+    "total": 16
+  },
+  {
+    "vname": "諾亞動物醫院",
+    "tiems": 3,
+    "vets": 3,
+    "talk": 3,
+    "target": 1,
+    "cutomer": 2,
+    "env": 3,
+    "total": 15
+  },
+  {
+    "vname": "台欣動物醫院",
+    "tiems": 1,
+    "vets": 1,
+    "talk": 2,
+    "target": 0,
+    "cutomer": 5,
+    "env": 5,
+    "total": 14
+  },
+  {
+    "vname": "米亞動物醫院",
+    "tiems": 3,
+    "vets": 1,
+    "talk": 5,
+    "target": 0,
+    "cutomer": 0,
+    "env": 5,
+    "total": 14
+  },
+  {
+    "vname": "豐盛動物醫院",
+    "tiems": 1,
+    "vets": 2,
+    "talk": 3,
+    "target": 2,
+    "cutomer": 3,
+    "env": 3,
+    "total": 14
+  },
+  {
+    "vname": "恩典動物醫院",
+    "tiems": 4,
+    "vets": 3,
+    "talk": 3,
+    "target": 0,
+    "cutomer": 1,
+    "env": 3,
+    "total": 14
+  },
+  {
+    "vname": "德心動物醫院",
+    "tiems": 1,
+    "vets": 2,
+    "talk": 3,
+    "target": 0,
+    "cutomer": 3,
+    "env": 4,
+    "total": 13
+  },
+  {
+    "vname": "路米動物醫院",
+    "tiems": 2,
+    "vets": 3,
+    "talk": 2,
+    "target": 0,
+    "cutomer": 2,
+    "env": 4,
+    "total": 13
+  },
+  {
+    "vname": "日健動物醫院",
+    "tiems": 1,
+    "vets": 2,
+    "talk": 2,
+    "target": 1,
+    "cutomer": 4,
+    "env": 3,
+    "total": 13
+  },
+  {
+    "vname": "成功獸醫院",
+    "tiems": 4,
+    "vets": 1,
+    "talk": 4,
+    "target": 0,
+    "cutomer": 1,
+    "env": 3,
+    "total": 13
+  },
+  {
+    "vname": "傑翔動物醫院",
+    "tiems": 3,
+    "vets": 1,
+    "talk": 4,
+    "target": 1,
+    "cutomer": 0,
+    "env": 3,
+    "total": 12
+  },
+  {
+    "vname": "長沁動物醫院",
+    "tiems": 2,
+    "vets": 2,
+    "talk": 1,
+    "target": 0,
+    "cutomer": 2,
+    "env": 4,
+    "total": 11
+  },
+  {
+    "vname": "興泰動物醫院",
+    "tiems": 1,
+    "vets": 2,
+    "talk": 2,
+    "target": 0,
+    "cutomer": 2,
+    "env": 3,
+    "total": 10
+  },
+  {
+    "vname": "美加璦動物醫院",
+    "tiems": 2,
+    "vets": 1,
+    "talk": 3,
+    "target": 1,
+    "cutomer": 0,
+    "env": 3,
+    "total": 10
+  },
+  {
+    "vname": "慈愛動物醫院",
+    "tiems": 1,
+    "vets": 3,
+    "talk": 1,
+    "target": 0,
+    "cutomer": 3,
+    "env": 2,
+    "total": 10
+  },
+  {
+    "vname": "貝恩動物醫院",
+    "tiems": 1,
+    "vets": 1,
+    "talk": 3,
+    "target": 0,
+    "cutomer": 0,
+    "env": 4,
+    "total": 9
+  },
+  {
+    "vname": "梁動物內科醫院",
+    "tiems": 1,
+    "vets": 1,
+    "talk": 1,
+    "target": 0,
+    "cutomer": 3,
+    "env": 3,
+    "total": 9
+  },
+  {
+    "vname": "金旺動物醫院",
+    "tiems": 1,
+    "vets": 1,
+    "talk": 2,
+    "target": 0,
+    "cutomer": 2,
+    "env": 3,
+    "total": 9
+  },
+  {
+    "vname": "澤禾動物醫院",
+    "tiems": 1,
+    "vets": 1,
+    "talk": 2,
+    "target": 0,
+    "cutomer": 2,
+    "env": 3,
+    "total": 9
+  },
+  {
+    "vname": "廣慈動物醫院",
+    "tiems": 2,
+    "vets": 2,
+    "talk": 1,
+    "target": 0,
+    "cutomer": 1,
+    "env": 3,
+    "total": 9
+  },
+  {
+    "vname": "大晶獸醫院",
+    "tiems": 2,
+    "vets": 1,
+    "talk": 3,
+    "target": 0,
+    "cutomer": 0,
+    "env": 3,
+    "total": 9
+  },
+  {
+    "vname": "人人愛動物醫院",
+    "tiems": 1,
+    "vets": 1,
+    "talk": 2,
+    "target": 0,
+    "cutomer": 3,
+    "env": 2,
+    "total": 9
+  },
+  {
+    "vname": "泰山動物醫院",
+    "tiems": 1,
+    "vets": 1,
+    "talk": 3,
+    "target": 2,
+    "cutomer": 0,
+    "env": 2,
+    "total": 9
+  },
+  {
+    "vname": "澄諾動物醫院",
+    "tiems": 1,
+    "vets": 1,
+    "talk": 2,
+    "target": 0,
+    "cutomer": 0,
+    "env": 4,
+    "total": 8
+  },
+  {
+    "vname": "嘉慶動物醫院",
+    "tiems": 1,
+    "vets": 1,
+    "talk": 2,
+    "target": 0,
+    "cutomer": 0,
+    "env": 4,
+    "total": 8
+  },
+  {
+    "vname": "吉米動物醫院",
+    "tiems": 2,
+    "vets": 1,
+    "talk": 1,
+    "target": 0,
+    "cutomer": 0,
+    "env": 4,
+    "total": 8
+  },
+  {
+    "vname": "不萊梅特殊寵物專科醫院",
+    "tiems": 1,
+    "vets": 1,
+    "talk": 1,
+    "target": 0,
+    "cutomer": 2,
+    "env": 3,
+    "total": 8
+  },
+  {
+    "vname": "長宏獸醫院",
+    "tiems": 1,
+    "vets": 1,
+    "talk": 2,
+    "target": 0,
+    "cutomer": 1,
+    "env": 3,
+    "total": 8
+  },
+  {
+    "vname": "東宏獸醫院",
+    "tiems": 1,
+    "vets": 1,
+    "talk": 3,
+    "target": 0,
+    "cutomer": 0,
+    "env": 3,
+    "total": 8
+  },
+  {
+    "vname": "旺竹動物醫院",
+    "tiems": 2,
+    "vets": 2,
+    "talk": 1,
+    "target": 0,
+    "cutomer": 0,
+    "env": 3,
+    "total": 8
+  },
+  {
+    "vname": "正安動物醫院",
+    "tiems": 1,
+    "vets": 1,
+    "talk": 3,
+    "target": 0,
+    "cutomer": 1,
+    "env": 2,
+    "total": 8
+  },
+  {
+    "vname": "興安動物醫院",
+    "tiems": 1,
+    "vets": 1,
+    "talk": 2,
+    "target": 2,
+    "cutomer": 0,
+    "env": 2,
+    "total": 8
+  },
+  {
+    "vname": "皇家動物醫院",
+    "tiems": 1,
+    "vets": 2,
+    "talk": 1,
+    "target": 0,
+    "cutomer": 1,
+    "env": 2,
+    "total": 7
+  },
+  {
+    "vname": "華遠獸醫院",
+    "tiems": 1,
+    "vets": 1,
+    "talk": 3,
+    "target": 0,
+    "cutomer": 0,
+    "env": 2,
+    "total": 7
+  },
+  {
+    "vname": "弘安動物醫院",
+    "tiems": 2,
+    "vets": 1,
+    "talk": 2,
+    "target": 0,
+    "cutomer": 0,
+    "env": 2,
+    "total": 7
+  },
+  {
+    "vname": "新亞動物醫院",
+    "tiems": 1,
+    "vets": 1,
+    "talk": 1,
+    "target": 0,
+    "cutomer": 0,
+    "env": 3,
+    "total": 6
+  },
+  {
+    "vname": "台灣動物醫院",
+    "tiems": 1,
+    "vets": 1,
+    "talk": 2,
+    "target": 0,
+    "cutomer": 0,
+    "env": 2,
+    "total": 6
+  },
+  {
+    "vname": "三民動物醫院",
+    "tiems": 1,
+    "vets": 1,
+    "talk": 2,
+    "target": 0,
+    "cutomer": 0,
+    "env": 2,
+    "total": 6
+  },
+  {
+    "vname": "良醫動物醫院",
+    "tiems": 1,
+    "vets": 1,
+    "talk": 2,
+    "target": 0,
+    "cutomer": 0,
+    "env": 2,
+    "total": 6
+  },
+  {
+    "vname": "全陽動物醫院",
+    "tiems": 1,
+    "vets": 1,
+    "talk": 2,
+    "target": 0,
+    "cutomer": 0,
+    "env": 2,
+    "total": 6
+  },
+  {
+    "vname": "戴瑩乾動物醫院",
+    "tiems": 1,
+    "vets": 1,
+    "talk": 1,
+    "target": 0,
+    "cutomer": 0,
+    "env": 2,
+    "total": 5
+  },
+  {
+    "vname": "吉林動物醫院",
+    "tiems": 1,
+    "vets": 1,
+    "talk": 1,
+    "target": 0,
+    "cutomer": 0,
+    "env": 1,
+    "total": 4
+  }
+]
