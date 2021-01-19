@@ -5,14 +5,14 @@ export class BuyerSchema {
 
   name = '';
 
-  ratingList: RatingType[] = [];
+  ratingTypeList: RatingType[] = [];
 
   description = '';
 
-  constructor(id: number, schemaName: string, ratingList: RatingType[], description: string) {
+  constructor(id: number, schemaName: string, ratingTypeList: RatingType[], description: string) {
     this.id = id;
     this.name = schemaName;
-    this.ratingList = ratingList;
+    this.ratingTypeList = ratingTypeList;
     this.description = description;
   }
 
@@ -20,7 +20,7 @@ export class BuyerSchema {
 
   static propName = 'name';
 
-  static propRatingList = 'ratingList';
+  static propRatingList = 'ratingTypeList';
 
   static propDescription = 'description';
 }

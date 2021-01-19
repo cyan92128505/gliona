@@ -5,7 +5,7 @@ import { RatingType } from '../../models/repositories/rating_type';
 
 export const RatingTypeEdit: React.FC<CreateProps> = (props) => (
   <Create {...props}>
-    <SimpleForm>
+    <SimpleForm redirect="list">
       <TextInput source={RatingType.propId} />
       <TextInput source={RatingType.propName} />
       <TextInput source={RatingType.propBaseNumber} />

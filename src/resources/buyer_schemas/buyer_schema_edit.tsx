@@ -5,7 +5,7 @@ import { BuyerSchema } from '../../models/repositories/buyer_schema';
 
 export const BuyerSchemaEdit: React.FC<CreateProps> = (props) => (
   <Create {...props}>
-    <SimpleForm>
+    <SimpleForm redirect="list">
       <TextInput source={BuyerSchema.propId} />
       <TextInput source={BuyerSchema.propName} />
       <TextInput source={BuyerSchema.propDescription} />

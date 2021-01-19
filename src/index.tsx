@@ -37,7 +37,6 @@ async function initial() {
     switch (locale) {
       case 'en':
         return { ...englishMessages, ...appEnglishMessages };
-
       default:
         return { ...chineseMessages, ...appChineseMessages };
     }
@@ -65,7 +64,7 @@ async function initial() {
         create={AppResources.BuyerResource.create}
         edit={AppResources.BuyerResource.edit}
       />
-      <Resource
+      {/* <Resource
         name={AppResources.BuyerSchemaResource.name}
         list={AppResources.BuyerSchemaResource.list}
         icon={AppResources.BuyerSchemaResource.icon}
@@ -73,19 +72,12 @@ async function initial() {
         edit={AppResources.BuyerSchemaResource.edit}
       />
       <Resource
-        name={AppResources.RatingResource.name}
-        list={AppResources.RatingResource.list}
-        icon={AppResources.RatingResource.icon}
-        create={AppResources.RatingResource.create}
-        edit={AppResources.RatingResource.edit}
-      />
-      <Resource
         name={AppResources.RatingTypeResource.name}
         list={AppResources.RatingTypeResource.list}
         icon={AppResources.RatingTypeResource.icon}
         create={AppResources.RatingTypeResource.create}
         edit={AppResources.RatingTypeResource.edit}
-      />
+      /> */}
     </Admin>,
     document.getElementById('root')
   );

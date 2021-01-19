@@ -5,7 +5,7 @@ import { Buyer } from '../../models/repositories/buyer';
 
 export const BuyerCreate: React.FC<CreateProps> = (props) => (
   <Create {...props}>
-    <SimpleForm>
+    <SimpleForm redirect="list">
       <TextInput source={Buyer.propId} />
       <TextInput source={Buyer.propName} />
       <TextInput source={Buyer.propDescription} />
