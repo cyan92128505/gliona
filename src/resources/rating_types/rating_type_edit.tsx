@@ -1,7 +1,7 @@
 import React from 'react';
 import { Create, CreateProps, SimpleForm, TextInput } from 'react-admin';
 
-import { RatingType } from '../../models/rating_type';
+import { RatingType } from '../../models/repositories/rating_type';
 
 export const RatingTypeEdit: React.FC<CreateProps> = (props) => (
   <Create {...props}>

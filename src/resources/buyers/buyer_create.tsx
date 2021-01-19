@@ -1,7 +1,7 @@
 import React from 'react';
 import { Create, CreateProps, SimpleForm, TextInput } from 'react-admin';
 
-import { Buyer } from '../../models/buyer';
+import { Buyer } from '../../models/repositories/buyer';
 
 export const BuyerCreate: React.FC<CreateProps> = (props) => (
   <Create {...props}>

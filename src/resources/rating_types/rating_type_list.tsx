@@ -3,7 +3,7 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 import React from 'react';
 import { Datagrid, List, ListProps, TextField } from 'react-admin';
 
-import { RatingType } from '../../models/rating_type';
+import { RatingType } from '../../models/repositories/rating_type';
 
 export const RatingIcon = StarBorderIcon;
 

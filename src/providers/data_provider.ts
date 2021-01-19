@@ -7,7 +7,7 @@ import { firebaseAuthProvider } from './auth_provider';
 import { StateCodeType } from './error_provider';
 
 import env from '../config/env';
-import SettingModel from '../models/setting_model';
+import SettingModel from '../models/repositories/setting_model';
 import { CustomeAppState } from '../types';
 import { settingFlag, sidebarSettingFlag, localeFlag } from './repositories/setting';
 

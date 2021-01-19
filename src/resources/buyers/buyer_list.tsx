@@ -3,7 +3,7 @@ import PetsIcon from '@material-ui/icons/Pets';
 import React from 'react';
 import { Datagrid, List, ListProps, TextField } from 'react-admin';
 
-import { Buyer } from '../../models/buyer';
+import { Buyer } from '../../models/repositories/buyer';
 
 export const BuyerIcon = PetsIcon;
 

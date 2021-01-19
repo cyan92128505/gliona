@@ -3,7 +3,7 @@ import CategorySharpIcon from '@material-ui/icons/CategorySharp';
 import React from 'react';
 import { Datagrid, List, ListProps, TextField } from 'react-admin';
 
-import { BuyerSchema } from '../../models/buyer_schema';
+import { BuyerSchema } from '../../models/repositories/buyer_schema';
 
 export const BuyerIcon = CategorySharpIcon;
 

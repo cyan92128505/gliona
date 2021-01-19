@@ -1,7 +1,7 @@
 import React from 'react';
 import { Create, CreateProps, SimpleForm, TextInput } from 'react-admin';
 
-import { Rating } from '../../models/rating';
+import { Rating } from '../../models/repositories/rating';
 
 export const RatingCreate: React.FC<CreateProps> = (props) => (
   <Create {...props}>

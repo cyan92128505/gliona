@@ -3,7 +3,7 @@ import GradeIcon from '@material-ui/icons/Grade';
 import React from 'react';
 import { Datagrid, List, ListProps, TextField } from 'react-admin';
 
-import { Rating } from '../../models/rating';
+import { Rating } from '../../models/repositories/rating';
 
 export const RatingIcon = GradeIcon;
 
