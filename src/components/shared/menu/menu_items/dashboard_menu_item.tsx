@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import * as React from 'react';
 import { FC } from 'react';
 import DashboardIcon from '@material-ui/icons/Dashboard';

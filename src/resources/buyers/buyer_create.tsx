@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { FC } from 'react';
 import { Create, CreateProps, EditActionsProps, ListButton, SimpleForm, TextInput, TopToolbar } from 'react-admin';
 

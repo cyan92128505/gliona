@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { FC } from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
 import lodashGet from 'lodash/get';
