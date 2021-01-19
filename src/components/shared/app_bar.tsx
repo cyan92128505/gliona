@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React, { cloneElement } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -98,12 +96,14 @@ const AppBar = (props: any): JSX.Element => {
               />
             </IconButton>
           </Tooltip>
-          <Link to="/">
-            <AppMainLogo className={classes.titleIcon} fill="#ffffff" />
-          </Link>
+          {isXSmall ? null : (
+            <Link to="/">
+              <AppMainLogo className={classes.titleIcon} fill="#ffffff" />
+            </Link>
+          )}
           <Typography variant="h6" color="inherit" className={classes.title} id="react-admin-title" />
           <span className={classes.spacer} />
-          <LoadingIndicator />
+          {isXSmall ? null : <LoadingIndicator />}
           {cloneElement(<UserMenu icon={<AccountCircle />} />, { logout })}
         </Toolbar>
       </MUIAppBar>
