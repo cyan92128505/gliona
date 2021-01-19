@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React, { Children, cloneElement } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Drawer, useMediaQuery, Theme } from '@material-ui/core';
