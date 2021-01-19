@@ -1,9 +1,11 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { useMediaQuery } from '@material-ui/core';
+import { makeStyles, Theme } from '@material-ui/core/styles';
 import PetsIcon from '@material-ui/icons/Pets';
 import React from 'react';
-import { Datagrid, List, ListProps, TextField } from 'react-admin';
+import { Datagrid, List, ListProps, TextField, EditButton, SimpleList } from 'react-admin';
 
 import { Buyer } from '../../models/repositories/buyer';
+import BuyerActions from './buyer_actions';
 
 export const BuyerIcon = PetsIcon;
 
@@ -24,14 +26,25 @@ const useStyles = makeStyles((theme) => ({
 
 const BuyerList: React.FC<ListProps> = (props) => {
   const classes = useStyles();
+  const isSmall = useMediaQuery<Theme>((theme) => theme.breakpoints.down('sm'));
 
   return (
-    <List {...props}>
-      <Datagrid optimized>
-        <TextField source={Buyer.propId} />
-        <TextField source={Buyer.propName} cellClassName={classes.title} />
-        <TextField source={Buyer.propDescription} cellClassName={classes.title} />
-      </Datagrid>
+    <List {...props} actions={<BuyerActions />}>
+      {isSmall ? (
+        <SimpleList
+          primaryText={(record) => record[Buyer.propName]}
+          secondaryText={(record) => record[Buyer.propDescription]}
+          tertiaryText={(record) => record[Buyer.propId]}
+          linkType={(_record) => 'edit'}
+        />
+      ) : (
+        <Datagrid optimized>
+          <TextField source={Buyer.propId} />
+          <TextField source={Buyer.propName} cellClassName={classes.title} />
+          <TextField source={Buyer.propDescription} cellClassName={classes.title} />
+          <EditButton />
+        </Datagrid>
+      )}
     </List>
   );
 };

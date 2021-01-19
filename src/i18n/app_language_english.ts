@@ -5,6 +5,7 @@ const enUs: I18n = {
   app: {
     welcome: 'Hi, %{name}',
     title: `${env.appName}`,
+    import: 'Import',
     error: {
       Success: 'Success',
       Denied: 'Denied',

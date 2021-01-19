@@ -15,6 +15,7 @@ interface I18n {
     [key: string]: StringMap | string;
     welcome: string;
     title: string;
+    import: string;
     error: {
       [key: string]: StringMap | string;
       Success: string;
@@ -105,6 +106,7 @@ interface I18nFunc {
     [key: string]: StringFuncMap | StringFunction;
     welcome: StringFunction;
     title: StringFunction;
+    import: StringFunction;
     error: {
       [key: string]: StringFuncMap | StringFunction;
       Success: StringFunction;

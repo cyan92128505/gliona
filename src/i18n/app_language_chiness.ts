@@ -5,6 +5,7 @@ const zhTW: I18n = {
   app: {
     welcome: '嗨，%{name}',
     title: `${env.appName}`,
+    import: '匯入',
     error: {
       Success: '使用功能成功',
       Denied: '禁止使用功能',
