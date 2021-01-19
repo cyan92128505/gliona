@@ -56,8 +56,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "tslint -p ./tsconfig.json",
-    "lint:fix": "tslint --fix -p ./tsconfig.json",
+    "lint": "eslint 'src/**/*.{js,ts,tsx}' --quiet",
+    "lint:fix": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix",
     "predeploy": "npm run build",
     "deploy": "sh ./CI/deploy.sh"
   },
