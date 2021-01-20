@@ -7,8 +7,8 @@ import { LoginProps } from 'ra-ui-materialui/lib/auth/Login';
 import { Box, Button, Card, CardActions, CircularProgress, Grid, TextField, Paper } from '@material-ui/core';
 import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
-import { customTheme } from '../../theme/custom_theme';
-import { AppMainLogo } from '../../components/shared/app_icons';
+import { CustomTheme } from '../../theme/custom_theme';
+import { AppMainLogo } from '../../components/shared/icons/app_icons';
 import { setSuperUser } from '../../redux/actions';
 
 const useStyles = makeStyles((theme) => ({
@@ -117,7 +117,7 @@ const Login = () => {
             <Card className={classes.card}>
               <div className={classes.avatar}>
                 <Grid container direction="column" justify="center" alignItems="center">
-                  <AppMainLogo width="128px" height="128px" fill={customTheme.palette.secondary.main} />
+                  <AppMainLogo width="128px" height="128px" fill={CustomTheme.palette.secondary.main} />
                   <h3>GLIONA</h3>
                   <span>manage your customer</span>
                 </Grid>
@@ -159,7 +159,7 @@ const Login = () => {
 
 export default (props: LoginProps): JSX.Element => {
   return (
-    <ThemeProvider theme={createMuiTheme(customTheme)}>
+    <ThemeProvider theme={createMuiTheme(CustomTheme)}>
       <Login {...props} />
     </ThemeProvider>
   );

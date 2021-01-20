@@ -76,6 +76,15 @@ interface I18n {
         name: string;
         ratingTable: string;
         description: string;
+        interview: string;
+        visit: string;
+        vet: string;
+        diabetic: string;
+        ointment: string;
+        passenger: string;
+        environmental: string;
+        total: string;
+        datetime: string;
       };
     };
     buyerSchema: {
@@ -179,6 +188,15 @@ interface I18nFunc {
         name: StringFunction;
         ratingTable: StringFunction;
         description: StringFunction;
+        interview: StringFunction;
+        visit: StringFunction;
+        vet: StringFunction;
+        diabetic: StringFunction;
+        ointment: StringFunction;
+        passenger: StringFunction;
+        environmental: StringFunction;
+        total: StringFunction;
+        datetime: StringFunction;
       };
     };
     buyerSchema: {

@@ -1,7 +1,7 @@
 import { brown, red, teal } from '@material-ui/core/colors';
 import { createMuiTheme } from '@material-ui/core/styles';
 
-export const customTheme = createMuiTheme({
+export const CustomTheme = createMuiTheme({
   palette: {
     primary: teal,
     secondary: brown,
@@ -24,4 +24,4 @@ export const customTheme = createMuiTheme({
   },
 });
 
-export default customTheme;
+export default CustomTheme;

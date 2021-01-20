@@ -6,7 +6,7 @@ import './dashboard.css';
 import { Title } from 'react-admin';
 import { Icon, LatLngExpression } from 'leaflet';
 import env from '../../config/env';
-import { MapMarker2X, MapMarkerShadow } from '../../components/shared/app_icons';
+import { MapMarker2X, MapMarkerShadow } from '../../components/shared/icons/app_icons';
 
 const defaultPosition: LatLngExpression = [23.7393441, 120.4262101];
 const useStyles = makeStyles((theme) => ({

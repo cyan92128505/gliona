@@ -51,12 +51,21 @@ const zhTW: I18n = {
       },
     },
     buyer: {
-      name: '客戶 |||| 客戶列表',
+      name: '獸醫院 |||| 獸醫院列表',
       fields: {
         id: '編號',
         name: '名稱',
         ratingTable: '評分表',
         description: '描述',
+        interview: '訪談程度',
+        visit: '拜訪次數',
+        vet: '醫師數量',
+        diabetic: '糖尿病患者數量',
+        ointment: '藥膏患者數量',
+        passenger: '客流量',
+        environmental: '環境程度',
+        total: '總分',
+        datetime: '建立日期',
       },
     },
     buyerSchema: {

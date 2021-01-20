@@ -9,7 +9,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import { setSidebarVisibility, useTranslate } from 'ra-core';
 import { LoadingIndicator, UserMenu, HideOnScroll } from 'ra-ui-materialui';
 
-import { AppMainLogo } from './app_icons';
+import { AppMainLogo } from './icons/app_icons';
 
 const useStyles = makeStyles(
   (theme) => ({

@@ -17,7 +17,7 @@ import customRoutes from './pages/custom_route';
 import Dashboard from './pages/dashboard/dashboard';
 import reportWebVitals from './reportWebVitals';
 import AppResources from './resources';
-import { customTheme } from './theme/custom_theme';
+import { CustomTheme } from './theme/custom_theme';
 import env from './config/env';
 import customReducers from './redux/reducers';
 import customSagas from './redux/sagas';
@@ -45,7 +45,7 @@ async function initial() {
   ReactDOM.render(
     <Admin
       title={env.appFullName}
-      theme={customTheme}
+      theme={CustomTheme}
       layout={Layout}
       dataProvider={dataProvider}
       authProvider={authProvider}
@@ -63,6 +63,7 @@ async function initial() {
         icon={AppResources.BuyerResource.icon}
         create={AppResources.BuyerResource.create}
         edit={AppResources.BuyerResource.edit}
+        show={AppResources.BuyerResource.show}
       />
       {/* <Resource
         name={AppResources.BuyerSchemaResource.name}
