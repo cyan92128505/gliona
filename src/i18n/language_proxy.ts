@@ -16,6 +16,8 @@ interface I18n {
     welcome: string;
     title: string;
     import: string;
+    draw: string;
+    darwId: string;
     error: {
       [key: string]: StringMap | string;
       Success: string;
@@ -46,6 +48,16 @@ interface I18n {
   };
   resources: {
     [key: string]: StringMap | string;
+    jennider: {
+      [key: string]: StringMap | string;
+      name: string;
+      fields: {
+        [key: string]: StringMap | string;
+        question: string;
+        result: string;
+        datetime: string;
+      };
+    };
     setting: {
       [key: string]: StringMap | string;
       name: string;
@@ -107,6 +119,8 @@ interface I18nFunc {
     welcome: StringFunction;
     title: StringFunction;
     import: StringFunction;
+    draw: StringFunction;
+    darwId: StringFunction;
     error: {
       [key: string]: StringFuncMap | StringFunction;
       Success: StringFunction;
@@ -137,6 +151,16 @@ interface I18nFunc {
   };
   resources: {
     [key: string]: StringFuncMap | StringFunction;
+    jennider: {
+      [key: string]: StringFuncMap | StringFunction;
+      name: StringFunction;
+      fields: {
+        [key: string]: StringFuncMap | StringFunction;
+        question: StringFunction;
+        result: StringFunction;
+        datetime: StringFunction;
+      };
+    };
     setting: {
       [key: string]: StringFuncMap | StringFunction;
       name: StringFunction;

@@ -6,6 +6,8 @@ const zhTW: I18n = {
     welcome: '嗨，%{name}',
     title: `${env.appName}`,
     import: '匯入',
+    draw: '求籤',
+    darwId: '第%{id}籤',
     error: {
       Success: '使用功能成功',
       Denied: '禁止使用功能',
@@ -33,6 +35,14 @@ const zhTW: I18n = {
     },
   },
   resources: {
+    jennider: {
+      name: '淺草籤',
+      fields: {
+        question: '問題',
+        result: '結果',
+        datetime: '時間',
+      },
+    },
     setting: {
       name: '設定',
       fields: {
@@ -41,7 +51,7 @@ const zhTW: I18n = {
       },
     },
     buyer: {
-      name: '買家 |||| 買家',
+      name: '客戶 |||| 客戶列表',
       fields: {
         id: '編號',
         name: '名稱',
@@ -50,7 +60,7 @@ const zhTW: I18n = {
       },
     },
     buyerSchema: {
-      name: '買家模板 |||| 買家模板',
+      name: '客戶模板 |||| 客戶模板列表',
       fields: {
         id: '編號',
         name: '名稱',
@@ -59,7 +69,7 @@ const zhTW: I18n = {
       },
     },
     ratingType: {
-      name: '評分類別 |||| 評分類別',
+      name: '評分類別 |||| 評分類別列表',
       fields: {
         id: '編號',
         name: '名稱',
@@ -67,7 +77,7 @@ const zhTW: I18n = {
       },
     },
     rating: {
-      name: '評分 |||| 評分',
+      name: '評分 |||| 評分列表',
       fields: {
         id: '編號',
         name: '名稱',

@@ -6,20 +6,20 @@ import { DashboardMenuItemProps } from 'react-admin';
 
 import { MenuItemLink } from 'ra-ui-materialui';
 import { i18nProxy } from '../../../../i18n/language_proxy';
-import { SettingIcon } from '../../../../resources/setting/list';
+import JinjaIcon from '../../icons/jinja';
 
-const SettingMenuItem: FC<DashboardMenuItemProps> = ({ locale, onClick, ...props }) => {
+const JenniderMenuItem: FC<DashboardMenuItemProps> = ({ locale, onClick, ...props }) => {
   const translate = useTranslate();
   return (
     <MenuItemLink
       onClick={onClick}
-      to="/setting"
-      primaryText={translate(i18nProxy.resources.setting.name())}
-      leftIcon={<SettingIcon />}
+      to="/jennider"
+      primaryText={translate(i18nProxy.resources.jennider.name())}
+      leftIcon={<JinjaIcon />}
       exact
       {...props}
     />
   );
 };
 
-export default SettingMenuItem;
+export default JenniderMenuItem;

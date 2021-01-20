@@ -12,6 +12,7 @@ import { MenuItemLink, MenuProps } from 'react-admin';
 
 import SettingMenuItem from './menu_items/setting_menu_item';
 import DashboardMenuItem from './menu_items/dashboard_menu_item';
+import JenniderMenuItem from './menu_items/jennider_menu_item';
 
 export const MENU_WIDTH = 240;
 export const CLOSED_MENU_WIDTH = 55;
@@ -71,7 +72,8 @@ const Menu: FC<CustomMenuProps> = (props) => {
   useSelector((state: ReduxState) => state.router.location.pathname);
 
   const customMenuItem = [
-    <SettingMenuItem key="ScannerMenuIt≥ƒem" onClick={onMenuClick} dense={dense} sidebarIsOpen={open} />,
+    <JenniderMenuItem key="JenniderMenuItem" onClick={onMenuClick} dense={dense} sidebarIsOpen={open} />,
+    <SettingMenuItem key="SettingMenuItem" onClick={onMenuClick} dense={dense} sidebarIsOpen={open} />,
   ];
 
   return (

@@ -6,6 +6,8 @@ const enUs: I18n = {
     welcome: 'Hi, %{name}',
     title: `${env.appName}`,
     import: 'Import',
+    draw: 'draw',
+    darwId: 'No.%{id}',
     error: {
       Success: 'Success',
       Denied: 'Denied',
@@ -33,6 +35,14 @@ const enUs: I18n = {
     },
   },
   resources: {
+    jennider: {
+      name: 'draw lots',
+      fields: {
+        question: 'question',
+        result: 'result',
+        datetime: 'datetime',
+      },
+    },
     setting: {
       name: 'Setting',
       fields: {

@@ -24,12 +24,7 @@ const BuyerActions: FC<ListActionsProps> = (props) => {
       <CreateButton basePath={basePath} />
       <ExportButton disabled={total === 0} resource={resource} sort={currentSort} filterValues={filterValues} />
       {/* Add your custom actions */}
-      <Button
-        onClick={() => {
-          alert('Your custom action');
-        }}
-        label={translate(i18nProxy.app.import())}
-      >
+      <Button onClick={() => {}} label={translate(i18nProxy.app.import())}>
         <PublishIcon />
       </Button>
     </TopToolbar>
