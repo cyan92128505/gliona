@@ -7,6 +7,7 @@ import { firebaseAuthProvider } from './auth_provider';
 import { StateCodeType } from './error_provider';
 
 import env from '../config/env';
+import { Buyer } from '../models/repositories/buyer';
 import SettingModel from '../models/repositories/setting_model';
 import { CustomeAppState } from '../types';
 import { settingFlag, sidebarSettingFlag, localeFlag } from './repositories/setting';
@@ -85,7 +86,7 @@ class DataProviderFactory {
       defaultData: { setting: [{ id: sidebarSettingFlag, value: true }] },
       localStorageKey: `${env.appName}`,
       loggingEnabled: false,
-      localStorageUpdateDelay: 100,
+      localStorageUpdateDelay: 0,
     });
   }
 
@@ -211,6 +212,52 @@ class DataProviderFactory {
     customeAppState.admin.ui.sidebarOpen = !!(await this.getSidebarSetting());
 
     return customeAppState;
+  }
+
+  async getAllBuyerList(): Promise<Buyer[]> {
+    const buyerList: Buyer[] = [];
+    const firstQuery = await this.localStorage.getList(Buyer.resourceName, {
+      pagination: {
+        page: 1,
+        perPage: 0,
+      },
+      sort: {
+        field: Buyer.propDatetime,
+        order: '',
+      },
+      filter: null,
+    });
+
+    if (firstQuery.total === 0) {
+      return buyerList;
+    }
+
+    const perPage = 100;
+    const totalPage = Math.ceil(firstQuery.total / perPage) + 1;
+
+    const pages = new Array(totalPage).fill('v');
+
+    const promiselist = (
+      await Promise.all(
+        pages.map(async (_v, i) => {
+          const currentQuery = await this.localStorage.getList<Buyer>(Buyer.resourceName, {
+            pagination: {
+              page: i + 1,
+              perPage,
+            },
+            sort: {
+              field: Buyer.propDatetime,
+              order: '',
+            },
+            filter: null,
+          });
+
+          return currentQuery.data;
+        })
+      )
+    ).reduce((a, b) => a.concat(b));
+
+    return promiselist;
   }
 }
 

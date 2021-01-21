@@ -78,6 +78,8 @@ export class Buyer {
   static propDatetime = 'datetime';
 
   static maxNumber = 5;
+
+  static statistics() {}
 }
 
 export default Buyer;

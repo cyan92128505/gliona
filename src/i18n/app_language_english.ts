@@ -3,7 +3,9 @@ import env from '../config/env';
 
 const enUs: I18n = {
   app: {
-    welcome: 'Hi, %{name}',
+    welcome: 'Welcome to %{name}',
+    landingString: 'Manager your vets',
+    getStarted: 'Click here to get started',
     title: `${env.appName}`,
     import: 'Import',
     draw: 'draw',
@@ -51,7 +53,7 @@ const enUs: I18n = {
       },
     },
     buyer: {
-      name: 'Buyer |||| Buyers',
+      name: 'Vet |||| Vets',
       fields: {
         id: 'id',
         name: 'name',

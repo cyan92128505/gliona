@@ -3,7 +3,9 @@ import env from '../config/env';
 
 const zhTW: I18n = {
   app: {
-    welcome: '嗨，%{name}',
+    welcome: '歡迎使用%{name}',
+    landingString: '開始管理你拜訪的獸醫院',
+    getStarted: '點擊這裡開始管理你拜訪的獸醫院',
     title: `${env.appName}`,
     import: '匯入',
     draw: '求籤',

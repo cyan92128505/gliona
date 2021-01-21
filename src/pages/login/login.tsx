@@ -10,6 +10,7 @@ import { ThemeProvider } from '@material-ui/styles';
 import { CustomTheme } from '../../theme/custom_theme';
 import { AppMainLogo } from '../../components/shared/icons/app_icons';
 import { setSuperUser } from '../../redux/actions';
+import { i18nProxy } from '../../i18n/language_proxy';
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -118,8 +119,8 @@ const Login = () => {
               <div className={classes.avatar}>
                 <Grid container direction="column" justify="center" alignItems="center">
                   <AppMainLogo width="128px" height="128px" fill={CustomTheme.palette.secondary.main} />
-                  <h3>GLIONA</h3>
-                  <span>manage your customer</span>
+                  <h3>{translate(i18nProxy.app.title()).toUpperCase()}</h3>
+                  <span>{translate(i18nProxy.app.landingString())}</span>
                 </Grid>
               </div>
               <div className={classes.form}>

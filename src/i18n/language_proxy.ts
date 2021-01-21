@@ -14,6 +14,8 @@ interface I18n {
   app: {
     [key: string]: StringMap | string;
     welcome: string;
+    landingString: string;
+    getStarted: string;
     title: string;
     import: string;
     draw: string;
@@ -126,6 +128,8 @@ interface I18nFunc {
   app: {
     [key: string]: StringFuncMap | StringFunction;
     welcome: StringFunction;
+    landingString: StringFunction;
+    getStarted: StringFunction;
     title: StringFunction;
     import: StringFunction;
     draw: StringFunction;
