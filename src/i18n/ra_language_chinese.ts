@@ -6,7 +6,7 @@ const chineseMessages: TranslationMessages = {
       add_filter: '增加過濾器',
       add: '增加',
       back: '返回',
-      bulk_actions: '已選擇 1 個 |||| 已選擇 %{smart_count} 個',
+      bulk_actions: '已選擇 %{smart_count} 個',
       cancel: '取消',
       clear_input_value: '清除',
       clone: '複製',
@@ -120,7 +120,7 @@ const chineseMessages: TranslationMessages = {
       logged_out: '您的連線已斷線，請重新連接。',
     },
     validation: {
-      required: '需要',
+      required: '必填',
       minLength: '至少必須為 %{min} 個字符',
       maxLength: '不得超過 %{max} 個字符',
       minValue: '必須至少 %{min}',
