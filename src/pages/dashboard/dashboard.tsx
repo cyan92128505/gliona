@@ -1,6 +1,6 @@
 import 'leaflet/dist/leaflet.css';
 import React, { useState, useEffect, ReactPropTypes, FC, useRef } from 'react';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, Theme, useMediaQuery } from '@material-ui/core';
 import { MapContainer, MapContainerProps, Marker, Popup, TileLayer, useMapEvents } from 'react-leaflet';
 import './dashboard.css';
 import { Link, Title, useTranslate } from 'react-admin';
@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
     flex: '0 1 100%',
     height: '100%',
     flexWrap: 'wrap',
+    justifyContent: 'space-between',
     alignItems: 'center',
   },
   item: {
@@ -129,6 +130,7 @@ function Dashboard() {
   const classes = useStyles();
   const [isDataReady, SetDataReady] = useState(false);
   const [isDataExist, SetDataExist] = useState(false);
+  const isSmall = useMediaQuery<Theme>((theme) => theme.breakpoints.down('sm'));
 
   useEffect(() => {
     dataProviderInstance
@@ -162,7 +164,7 @@ function Dashboard() {
           <Link to={`/${Buyer.resourceName}`}>{translate(i18nProxy.app.getStarted())}</Link>
         </p>
       </div>
-      <VeterinarianLogo />
+      <VeterinarianLogo width={isSmall ? '100%' : '50%'} />
     </div>
   );
 
