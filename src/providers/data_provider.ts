@@ -11,6 +11,7 @@ import { Buyer } from '../models/repositories/buyer';
 import SettingModel from '../models/repositories/setting_model';
 import { CustomeAppState } from '../types';
 import { settingFlag, sidebarSettingFlag, localeFlag } from './repositories/setting';
+import BuyerTemp from '../data/buyer';
 
 class DataProviderFactory {
   appState = {
@@ -81,9 +82,8 @@ class DataProviderFactory {
     this.instance = axiosApiInstance;
 
     this.simpleRestProvider = simpleRestProvider(`${process.env.REACT_APP_END_POINT}`, axiosApiInstance.post);
-
     this.localStorage = localStorageDataProvider({
-      defaultData: { setting: [{ id: sidebarSettingFlag, value: true }] },
+      defaultData: { setting: [{ id: sidebarSettingFlag, value: true }], buyer: BuyerTemp },
       localStorageKey: `${env.appName}`,
       loggingEnabled: false,
       localStorageUpdateDelay: 0,
