@@ -125,12 +125,41 @@ function LocationMarker() {
   );
 }
 
-function Dashboard() {
+function LandingLogo() {
   const translate = useTranslate();
+  const classes = useStyles();
+  const isSmall = useMediaQuery<Theme>((theme) => theme.breakpoints.down('sm'));
+
+  return (
+    <div className={classes.emptyContainer}>
+      <div className={classes.welcome}>
+        <p className={classes.firstSentence}>
+          {translate(i18nProxy.app.welcome(), { name: env.appName?.toUpperCase() })}
+        </p>
+        <p className={classes.lastSentence}>
+          <Link to={`/${Buyer.resourceName}`}>{translate(i18nProxy.app.getStarted())}</Link>
+        </p>
+      </div>
+      <VeterinarianLogo width={isSmall ? '100%' : '50%'} />
+    </div>
+  );
+}
+
+export function IntroPage() {
+  const classes = useStyles();
+
+  return (
+    <div className={classes.wrapper}>
+      <Title defaultTitle={env.appName?.toUpperCase()} />
+      <LandingLogo />
+    </div>
+  );
+}
+
+function Dashboard() {
   const classes = useStyles();
   const [isDataReady, SetDataReady] = useState(false);
   const [isDataExist, SetDataExist] = useState(false);
-  const isSmall = useMediaQuery<Theme>((theme) => theme.breakpoints.down('sm'));
 
   useEffect(() => {
     dataProviderInstance
@@ -154,36 +183,20 @@ function Dashboard() {
       });
   }, []);
 
-  let element = (
-    <div className={classes.emptyContainer}>
-      <div className={classes.welcome}>
-        <p className={classes.firstSentence}>
-          {translate(i18nProxy.app.welcome(), { name: env.appName?.toUpperCase() })}
-        </p>
-        <p className={classes.lastSentence}>
-          <Link to={`/${Buyer.resourceName}`}>{translate(i18nProxy.app.getStarted())}</Link>
-        </p>
-      </div>
-      <VeterinarianLogo width={isSmall ? '100%' : '50%'} />
-    </div>
-  );
-
-  if (isDataReady && isDataExist) {
-    element = (
-      <div className={classes.container}>
-        <VetLineChart />
-        <MapContainer className={classes.item} center={defaultPosition} zoom={12} scrollWheelZoom>
-          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-          <LocationMarker />
-        </MapContainer>
-      </div>
-    );
-  }
-
   return (
     <div className={classes.wrapper}>
       <Title defaultTitle={env.appName?.toUpperCase()} />
-      {element}
+      {isDataReady && isDataExist ? (
+        <LandingLogo />
+      ) : (
+        <div className={classes.container}>
+          <VetLineChart />
+          <MapContainer className={classes.item} center={defaultPosition} zoom={12} scrollWheelZoom>
+            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            <LocationMarker />
+          </MapContainer>
+        </div>
+      )}
     </div>
   );
 }

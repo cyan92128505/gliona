@@ -7,6 +7,7 @@ import { Button, ButtonGroup, Box, Container, Card, Grid, Typography } from '@ma
 import { useTranslate, useLocale, useSetLocale, Title } from 'react-admin';
 import { setLocale as setLocaleAction } from '../../redux/actions';
 import { i18nProxy } from '../../i18n/language_proxy';
+import ResetButton from './reset_button';
 
 export const SettingIcon = SettingsIcon;
 
@@ -41,6 +42,7 @@ function SettingList(): JSX.Element {
               </ButtonGroup>
             </Box>
           </Card>
+          <ResetButton />
         </Grid>
       </Grid>
     </Container>
