@@ -1,13 +1,11 @@
 import { useMediaQuery } from '@material-ui/core';
 import { makeStyles, Theme } from '@material-ui/core/styles';
-import PetsIcon from '@material-ui/icons/Pets';
 import React from 'react';
 import { Datagrid, List, ListProps, TextField, EditButton, SimpleList, DateField, ShowButton } from 'react-admin';
 
 import { Buyer } from '../../models/repositories/buyer';
 import BuyerActions from './buyer_actions';
-
-export const BuyerIcon = PetsIcon;
+import BuyerEmpty from './buyer_empty';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -29,12 +27,12 @@ const BuyerList: React.FC<ListProps> = (props) => {
   const isSmall = useMediaQuery<Theme>((theme) => theme.breakpoints.down('sm'));
 
   return (
-    <List {...props} actions={<BuyerActions />}>
+    <List {...props} actions={<BuyerActions />} empty={<BuyerEmpty />}>
       {isSmall ? (
         <SimpleList
           primaryText={(record) => record[Buyer.propName]}
           secondaryText={(record) => record[Buyer.propDescription]}
-          linkType={(_record) => 'edit'}
+          linkType={(_record) => 'show'}
         />
       ) : (
         <Datagrid optimized>

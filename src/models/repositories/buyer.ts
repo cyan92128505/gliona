@@ -1,3 +1,7 @@
+import PetsIcon from '@material-ui/icons/Pets';
+
+export const BuyerIcon = PetsIcon;
+
 export class Buyer {
   id: number;
 
@@ -80,6 +84,8 @@ export class Buyer {
   static maxNumber = 5;
 
   static statistics() {}
+
+  static Icon = BuyerIcon;
 }
 
 export default Buyer;

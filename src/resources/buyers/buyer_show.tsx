@@ -10,6 +10,7 @@ import {
   DateField,
   useTranslate,
   SimpleFormProps,
+  EditButton,
 } from 'react-admin';
 import { Radar } from 'react-chartjs-2';
 import { fade } from '@material-ui/core/styles/colorManipulator';
@@ -39,6 +40,7 @@ const PostTitle: FC<ShowTitleProps> = ({ record }) => {
 
 const ShowActions: FC<ShowActionsProps> = ({ basePath, data }) => (
   <TopToolbar>
+    <EditButton basePath={basePath} record={data} />
     <ListButton basePath={basePath} record={data} />
   </TopToolbar>
 );

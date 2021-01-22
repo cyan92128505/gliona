@@ -18,13 +18,10 @@ import { i18nProxy } from '../../i18n/language_proxy';
 import { dataProviderInstance } from '../../providers/data_provider';
 import { Buyer } from '../../models/repositories/buyer';
 
-const BuyerActions: FC<ListActionsProps> = (props) => {
+export const ImportBuyerButton: FC = (props) => {
   const refresh = useRefresh();
   const notify = useNotify();
   const unselectAll = useUnselectAll();
-
-  const { currentSort, resource, filterValues, basePath, total } = useListContext();
-
   const translate = useTranslate();
 
   const hiddenFileInput = useRef<HTMLInputElement>(null);
@@ -69,10 +66,9 @@ const BuyerActions: FC<ListActionsProps> = (props) => {
       reader.readAsText(fileUploaded);
     }
   };
+
   return (
-    <TopToolbar {...sanitizeListRestProps(props)}>
-      <CreateButton basePath={basePath} />
-      <ExportButton disabled={total === 0} resource={resource} sort={currentSort} filterValues={filterValues} />
+    <>
       <Button
         onClick={() => {
           hiddenFileInput?.current?.click();
@@ -82,6 +78,17 @@ const BuyerActions: FC<ListActionsProps> = (props) => {
         <PublishIcon />
       </Button>
       <input type="file" ref={hiddenFileInput} onChange={handleChange} style={{ display: 'none' }} />
+    </>
+  );
+};
+
+const BuyerActions: FC<ListActionsProps> = (props) => {
+  const { currentSort, resource, filterValues, basePath, total } = useListContext();
+  return (
+    <TopToolbar {...sanitizeListRestProps(props)}>
+      <CreateButton basePath={basePath} />
+      <ExportButton disabled={total === 0} resource={resource} sort={currentSort} filterValues={filterValues} />
+      <ImportBuyerButton {...props} />
     </TopToolbar>
   );
 };
