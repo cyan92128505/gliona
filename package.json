@@ -82,7 +82,6 @@
     "@commitlint/config-conventional": "^11.0.0",
     "@commitlint/core": "^11.0.0",
     "@types/chart.js": "^2.9.29",
-    "@types/chartjs": "^0.0.31",
     "@types/classnames": "^2.2.11",
     "@types/inflection": "^1.5.28",
     "@types/jest": "^26.0.15",
