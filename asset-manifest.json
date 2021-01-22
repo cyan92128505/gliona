@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/gliona/static/css/main.275ce178.chunk.css",
-    "main.js": "/gliona/static/js/main.6d5bbbc0.chunk.js",
-    "main.js.map": "/gliona/static/js/main.6d5bbbc0.chunk.js.map",
+    "main.js": "/gliona/static/js/main.e25e9781.chunk.js",
+    "main.js.map": "/gliona/static/js/main.e25e9781.chunk.js.map",
     "runtime-main.js": "/gliona/static/js/runtime-main.22c1afd4.js",
     "runtime-main.js.map": "/gliona/static/js/runtime-main.22c1afd4.js.map",
     "static/css/2.b4ebbe46.chunk.css": "/gliona/static/css/2.b4ebbe46.chunk.css",
-    "static/js/2.e6ac0195.chunk.js": "/gliona/static/js/2.e6ac0195.chunk.js",
-    "static/js/2.e6ac0195.chunk.js.map": "/gliona/static/js/2.e6ac0195.chunk.js.map",
+    "static/js/2.ee4367b4.chunk.js": "/gliona/static/js/2.ee4367b4.chunk.js",
+    "static/js/2.ee4367b4.chunk.js.map": "/gliona/static/js/2.ee4367b4.chunk.js.map",
     "static/js/3.9cd2b47e.chunk.js": "/gliona/static/js/3.9cd2b47e.chunk.js",
     "static/js/3.9cd2b47e.chunk.js.map": "/gliona/static/js/3.9cd2b47e.chunk.js.map",
     "index.html": "/gliona/index.html",
     "static/css/2.b4ebbe46.chunk.css.map": "/gliona/static/css/2.b4ebbe46.chunk.css.map",
     "static/css/main.275ce178.chunk.css.map": "/gliona/static/css/main.275ce178.chunk.css.map",
-    "static/js/2.e6ac0195.chunk.js.LICENSE.txt": "/gliona/static/js/2.e6ac0195.chunk.js.LICENSE.txt"
+    "static/js/2.ee4367b4.chunk.js.LICENSE.txt": "/gliona/static/js/2.ee4367b4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.22c1afd4.js",
     "static/css/2.b4ebbe46.chunk.css",
-    "static/js/2.e6ac0195.chunk.js",
+    "static/js/2.ee4367b4.chunk.js",
     "static/css/main.275ce178.chunk.css",
-    "static/js/main.6d5bbbc0.chunk.js"
+    "static/js/main.e25e9781.chunk.js"
   ]
 }
