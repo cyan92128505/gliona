@@ -20,6 +20,8 @@ interface I18n {
     import: string;
     draw: string;
     darwId: string;
+    reset: string;
+    allowReset: string;
     error: {
       [key: string]: StringMap | string;
       Success: string;
@@ -134,6 +136,8 @@ interface I18nFunc {
     import: StringFunction;
     draw: StringFunction;
     darwId: StringFunction;
+    reset: StringFunction;
+    allowReset: StringFunction;
     error: {
       [key: string]: StringFuncMap | StringFunction;
       Success: StringFunction;

@@ -10,6 +10,8 @@ const enUs: I18n = {
     import: 'Import',
     draw: 'draw',
     darwId: 'No.%{id}',
+    reset: 'Reset System',
+    allowReset: 'Are you sure you want to Reset System?',
     error: {
       Success: 'Success',
       Denied: 'Denied',

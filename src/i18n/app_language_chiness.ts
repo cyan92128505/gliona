@@ -10,6 +10,8 @@ const zhTW: I18n = {
     import: '匯入',
     draw: '求籤',
     darwId: '第%{id}籤',
+    reset: '重置系統',
+    allowReset: '你確定要重置系統嗎?',
     error: {
       Success: '使用功能成功',
       Denied: '禁止使用功能',

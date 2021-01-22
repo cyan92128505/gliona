@@ -22,7 +22,7 @@ function SettingList(): JSX.Element {
   };
 
   return (
-    <Container>
+    <Container maxWidth="sm">
       <Title defaultTitle={translate(i18nProxy.resources.setting.name())} />
       <Box m={2}> </Box>
       <Grid container direction="column" spacing={2}>
