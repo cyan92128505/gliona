@@ -17,6 +17,7 @@ import PublishIcon from '@material-ui/icons/Publish';
 import { i18nProxy } from '../../i18n/language_proxy';
 import { dataProviderInstance } from '../../providers/data_provider';
 import { Buyer } from '../../models/repositories/buyer';
+import { CustomCSVExporter } from '../../utils/json_exporter';
 
 export const ImportBuyerButton: FC = (props) => {
   const refresh = useRefresh();
@@ -31,7 +32,7 @@ export const ImportBuyerButton: FC = (props) => {
       const fileUploaded = event.target.files[0];
       const reader = new FileReader();
       reader.onload = async function (file) {
-        let rawTable = `${file?.target?.result}`.split('\n');
+        let rawTable = `${file?.target?.result}`.replace(/\r/g, '').split('\n');
         rawTable = rawTable.slice(1);
 
         const result = await Promise.all(
@@ -87,7 +88,13 @@ const BuyerActions: FC<ListActionsProps> = (props) => {
   return (
     <TopToolbar {...sanitizeListRestProps(props)}>
       <CreateButton basePath={basePath} />
-      <ExportButton disabled={total === 0} resource={resource} sort={currentSort} filterValues={filterValues} />
+      <ExportButton
+        exporter={CustomCSVExporter}
+        disabled={total === 0}
+        resource={resource}
+        sort={currentSort}
+        filterValues={filterValues}
+      />
       <ImportBuyerButton {...props} />
     </TopToolbar>
   );
