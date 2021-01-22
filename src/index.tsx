@@ -14,7 +14,7 @@ import './index.css';
 import Layout from './pages/layout';
 import Login from './pages/login/login';
 import customRoutes from './pages/custom_route';
-import Dashboard from './pages/dashboard/dashboard';
+import { IntroPage } from './pages/dashboard/dashboard';
 import reportWebVitals from './reportWebVitals';
 import AppResources from './resources';
 import { CustomTheme } from './theme/custom_theme';
@@ -50,7 +50,7 @@ async function initial() {
       dataProvider={dataProvider}
       authProvider={authProvider}
       loginPage={Login}
-      dashboard={Dashboard}
+      dashboard={IntroPage}
       customRoutes={customRoutes}
       i18nProvider={i18nProvider}
       customReducers={customReducers}

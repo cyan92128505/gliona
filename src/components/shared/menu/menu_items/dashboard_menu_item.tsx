@@ -12,7 +12,7 @@ const DashboardMenuItem: FC<DashboardMenuItemProps> = ({ locale, onClick, ...pro
   return (
     <MenuItemLink
       onClick={onClick}
-      to="/"
+      to="/dashboard"
       primaryText={translate('ra.page.dashboard')}
       leftIcon={<DashboardIcon />}
       exact

@@ -166,7 +166,7 @@ function Dashboard() {
       .getList(Buyer.resourceName, {
         pagination: {
           page: 1,
-          perPage: 0,
+          perPage: 1000,
         },
         sort: {
           field: Buyer.propDatetime,
@@ -176,8 +176,7 @@ function Dashboard() {
       })
       .then((values) => {
         SetDataReady(!!values);
-
-        if (values.total !== 0) {
+        if (values.total > 0) {
           SetDataExist(true);
         }
       });
@@ -187,8 +186,6 @@ function Dashboard() {
     <div className={classes.wrapper}>
       <Title defaultTitle={env.appName?.toUpperCase()} />
       {isDataReady && isDataExist ? (
-        <LandingLogo />
-      ) : (
         <div className={classes.container}>
           <VetLineChart />
           <MapContainer className={classes.item} center={defaultPosition} zoom={12} scrollWheelZoom>
@@ -196,6 +193,8 @@ function Dashboard() {
             <LocationMarker />
           </MapContainer>
         </div>
+      ) : (
+        <LandingLogo />
       )}
     </div>
   );
