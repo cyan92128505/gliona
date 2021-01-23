@@ -11,6 +11,7 @@ import {
   useTranslate,
   SimpleFormProps,
   EditButton,
+  RichTextField,
 } from 'react-admin';
 import { Radar } from 'react-chartjs-2';
 import { fade } from '@material-ui/core/styles/colorManipulator';
@@ -85,7 +86,7 @@ const CustomShowForms: FC<ShowRecordProps> = (props) => {
 
   return (
     <SimpleForm redirect="list" {...props}>
-      <TextField source={Buyer.propName} />
+      <TextField fullWidth source={Buyer.propName} />
       <Radar data={data} options={options} />
       {children}
     </SimpleForm>
@@ -96,8 +97,8 @@ export const BuyerShow: React.FC<ShowProps> = (props) => {
   return (
     <Show title={<PostTitle />} actions={<ShowActions />} {...props}>
       <CustomShowForms>
-        <TextField source={Buyer.propDescription} />
-        <DateField source={Buyer.propDatetime} />
+        <RichTextField fullWidth source={Buyer.propDescription} />
+        <DateField fullWidth source={Buyer.propDatetime} />
       </CustomShowForms>
     </Show>
   );
