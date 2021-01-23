@@ -13,6 +13,8 @@ import { dataProviderInstance } from '../../providers/data_provider';
 import { Buyer } from '../../models/repositories/buyer';
 import { i18nProxy } from '../../i18n/language_proxy';
 import { VeterinarianLogo } from '../../components/shared/icons/veterinarian';
+import { CustomTheme } from '../../theme/custom_theme';
+import { TextUtils } from '../../utils/text_utils';
 
 const defaultPosition: LatLngExpression = [25.0509145, 121.5344014];
 const useStyles = makeStyles((theme) => ({
@@ -68,6 +70,7 @@ const useStyles = makeStyles((theme) => ({
 const VetLineChart: FC = () => {
   const hiddenCanvas = useRef<HTMLCanvasElement>(null);
   const classes = useStyles();
+  const translate = useTranslate();
 
   useEffect(() => {
     dataProviderInstance.getAllBuyerList().then((buyerList) => {
@@ -79,10 +82,10 @@ const VetLineChart: FC = () => {
           labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
           datasets: [
             {
-              label: 'My First dataset',
-              backgroundColor: 'rgb(255, 99, 132)',
-              borderColor: 'rgb(255, 99, 132)',
-              data: [0, 10, 5, 2, 20, 30, 45],
+              label: TextUtils.SplitResourceName(translate(i18nProxy.resources.buyer.name())),
+              backgroundColor: CustomTheme.palette.primary.main,
+              borderColor: CustomTheme.palette.primary.main,
+              data: [0, 1, 5, 2, 2, 1, 6],
             },
           ],
         },
@@ -93,7 +96,7 @@ const VetLineChart: FC = () => {
         const chart = new Chart(ctx, config);
       }
     });
-  }, []);
+  }, [translate]);
   return (
     <div className={classes.item}>
       <canvas ref={hiddenCanvas} />
