@@ -79,7 +79,7 @@ const CustomShowForms: FC<ShowRecordProps> = (props) => {
 
   const options = {
     scale: {
-      ticks: { beginAtZero: true },
+      ticks: { beginAtZero: true, stepSize: 1 },
     },
   };
 

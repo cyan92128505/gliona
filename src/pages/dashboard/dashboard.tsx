@@ -6,6 +6,7 @@ import './dashboard.css';
 import { Link, Title, useTranslate } from 'react-admin';
 import { Icon, LatLngExpression } from 'leaflet';
 import { Chart } from 'chart.js';
+import dayjs from 'dayjs';
 
 import env from '../../config/env';
 import { MapMarker2X, MapMarkerShadow } from '../../components/shared/icons/app_icons';
@@ -75,22 +76,45 @@ const VetLineChart: FC = () => {
   useEffect(() => {
     dataProviderInstance.getAllBuyerList().then((buyerList) => {
       const ctx = hiddenCanvas.current;
+
+      const monthDatas: Map<number, number> = new Map();
+
+      for (const buyer of buyerList) {
+        const month = dayjs(buyer.datetime).month();
+        let count = 1;
+        if (monthDatas.get(month)) {
+          count += +`${monthDatas.get(month)}`;
+        }
+        monthDatas.set(month, count);
+      }
       const config = {
         type: 'line',
-
         data: {
-          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+          labels: Array.from(monthDatas.keys())
+            .reverse()
+            .map((m) => dayjs().month(m).format('YYYY/MM')),
           datasets: [
             {
               label: TextUtils.SplitResourceName(translate(i18nProxy.resources.buyer.name())),
               backgroundColor: CustomTheme.palette.primary.main,
               borderColor: CustomTheme.palette.primary.main,
-              data: [0, 1, 5, 2, 2, 1, 6],
+              data: Array.from(monthDatas.values()).reverse(),
             },
           ],
         },
 
-        options: { maintainAspectRatio: false },
+        options: {
+          maintainAspectRatio: false,
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  stepSize: 1,
+                },
+              },
+            ],
+          },
+        },
       };
       if (ctx) {
         const chart = new Chart(ctx, config);
@@ -197,9 +221,8 @@ function Dashboard() {
           <VetLineChart />
           <MapContainer className={classes.item} center={defaultPosition} zoom={13} scrollWheelZoom>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-
             {buyerMap.map((b) => (
-              <Marker icon={markerIcon} position={[b.locationX, b.locationY]}>
+              <Marker key={b.id} icon={markerIcon} position={[b.locationX, b.locationY]}>
                 <Popup>{b.name}</Popup>
               </Marker>
             ))}

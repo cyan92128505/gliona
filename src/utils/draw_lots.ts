@@ -47,7 +47,11 @@ class DarwLots {
   }
 
   static FateNumber(id: number): number {
-    return id + Math.round(Math.random() * (100 - 1)) + 1;
+    return id + DarwLots.RandomNumber(100, 1);
+  }
+
+  static RandomNumber(max: number, min: number): number {
+    return Math.round(Math.random() * (max - min)) + min;
   }
 
   static SpliceText(rawContent: string): string {
