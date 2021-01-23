@@ -14,7 +14,7 @@ import { Buyer } from '../../models/repositories/buyer';
 import { i18nProxy } from '../../i18n/language_proxy';
 import { VeterinarianLogo } from '../../components/shared/icons/veterinarian';
 
-const defaultPosition: LatLngExpression = [23.7393441, 120.4262101];
+const defaultPosition: LatLngExpression = [25.0509145, 121.5344014];
 const useStyles = makeStyles((theme) => ({
   wrapper: {
     display: 'flex',
@@ -101,30 +101,6 @@ const VetLineChart: FC = () => {
   );
 };
 
-function LocationMarker() {
-  const [position, setPosition] = useState(defaultPosition);
-  const map = useMapEvents({
-    locationfound(e) {
-      setPosition(e.latlng);
-      map.flyTo(e.latlng, map.getZoom());
-    },
-  });
-  useEffect(() => {
-    map.locate();
-  }, [map]);
-
-  const markerIcon = new Icon({
-    iconUrl: MapMarker2X,
-    shadowUrl: MapMarkerShadow,
-  });
-
-  return position === null ? null : (
-    <Marker icon={markerIcon} position={position}>
-      <Popup>You are here</Popup>
-    </Marker>
-  );
-}
-
 function LandingLogo() {
   const translate = useTranslate();
   const classes = useStyles();
@@ -160,6 +136,13 @@ function Dashboard() {
   const classes = useStyles();
   const [isDataReady, SetDataReady] = useState(false);
   const [isDataExist, SetDataExist] = useState(false);
+  const defaultPositions: Buyer[] = [];
+  const [buyerMap, setBuyerMap] = useState(defaultPositions);
+
+  const markerIcon = new Icon({
+    iconUrl: MapMarker2X,
+    shadowUrl: MapMarkerShadow,
+  });
 
   useEffect(() => {
     dataProviderInstance
@@ -178,6 +161,27 @@ function Dashboard() {
         SetDataReady(!!values);
         if (values.total > 0) {
           SetDataExist(true);
+
+          setBuyerMap(
+            values.data
+              .filter((b) => !!b.locationX && !!b.locationY)
+              .map((b) => ({
+                total: 0,
+                id: +b.id,
+                name: b.name,
+                description: b.description,
+                interview: b.interview,
+                visit: b.visit,
+                vet: b.vet,
+                diabetic: b.diabetic,
+                ointment: b.ointment,
+                passenger: b.passenger,
+                environmental: b.environmental,
+                locationX: b.locationX,
+                locationY: b.locationY,
+                datetime: b.datetime,
+              }))
+          );
         }
       });
   }, []);
@@ -188,9 +192,14 @@ function Dashboard() {
       {isDataReady && isDataExist ? (
         <div className={classes.container}>
           <VetLineChart />
-          <MapContainer className={classes.item} center={defaultPosition} zoom={12} scrollWheelZoom>
+          <MapContainer className={classes.item} center={defaultPosition} zoom={13} scrollWheelZoom>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <LocationMarker />
+
+            {buyerMap.map((b) => (
+              <Marker icon={markerIcon} position={[b.locationX, b.locationY]}>
+                <Popup>{b.name}</Popup>
+              </Marker>
+            ))}
           </MapContainer>
         </div>
       ) : (

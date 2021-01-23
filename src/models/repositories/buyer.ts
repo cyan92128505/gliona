@@ -27,6 +27,10 @@ export class Buyer {
 
   datetime = '';
 
+  locationX = 0;
+
+  locationY = 0;
+
   constructor(
     id: number,
     name: string,
@@ -39,7 +43,9 @@ export class Buyer {
     environmental: number,
     total: number,
     description: string,
-    datetime: string
+    datetime: string,
+    locationX: number,
+    locationY: number
   ) {
     this.id = id;
     this.name = name;
@@ -53,6 +59,8 @@ export class Buyer {
     this.total = total;
     this.description = description;
     this.datetime = datetime;
+    this.locationX = locationX;
+    this.locationY = locationY;
   }
 
   static resourceName = 'buyer';
@@ -80,6 +88,10 @@ export class Buyer {
   static propDescription = 'description';
 
   static propDatetime = 'datetime';
+
+  static propLocationX = 'locationX';
+
+  static propLocationY = 'locationY';
 
   static maxNumber = 5;
 

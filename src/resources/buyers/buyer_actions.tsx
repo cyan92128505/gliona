@@ -35,21 +35,23 @@ export const ImportBuyerButton: FC = (props) => {
         let rawTable = `${file?.target?.result}`.replace(/\r/g, '').split('\n');
         rawTable = rawTable.slice(1);
 
-        const result = await Promise.all(
+        await Promise.all(
           rawTable.map(async (rawRow) => {
             const valueArray = rawRow.split(',');
 
             const buyerTerm = {
               name: valueArray[0],
               description: '',
-              interview: valueArray[1],
-              visit: valueArray[2],
-              vet: valueArray[3],
-              diabetic: valueArray[4],
-              ointment: valueArray[5],
-              passenger: valueArray[6],
-              environmental: valueArray[7],
-              datetime: new Date(),
+              interview: +valueArray[1],
+              visit: +valueArray[2],
+              vet: +valueArray[3],
+              diabetic: +valueArray[4],
+              ointment: +valueArray[5],
+              passenger: +valueArray[6],
+              environmental: +valueArray[7],
+              locationX: +valueArray[8],
+              locationY: +valueArray[9],
+              datetime: valueArray[10] !== null ? valueArray[10] : new Date(),
             };
             const v = await dataProviderInstance.create(Buyer.resourceName, {
               data: buyerTerm,
