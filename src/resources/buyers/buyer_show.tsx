@@ -84,10 +84,14 @@ const CustomShowForms: FC<ShowRecordProps> = (props) => {
     },
   };
 
+  const processRecord = record as Buyer;
+  processRecord.description = processRecord?.description.replaceAll('\n', '<br />');
+
   return (
     <SimpleForm redirect="list" {...props}>
       <TextField fullWidth source={Buyer.propName} />
       <Radar data={data} options={options} />
+      <RichTextField fullWidth record={processRecord} source={Buyer.propDescription} />
       {children}
     </SimpleForm>
   );
@@ -97,7 +101,6 @@ export const BuyerShow: React.FC<ShowProps> = (props) => {
   return (
     <Show title={<PostTitle />} actions={<ShowActions />} {...props}>
       <CustomShowForms>
-        <RichTextField fullWidth source={Buyer.propDescription} />
         <DateField fullWidth source={Buyer.propDatetime} />
       </CustomShowForms>
     </Show>

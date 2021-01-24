@@ -41,8 +41,8 @@ const BuyerList: React.FC<ListProps> = (props) => {
             <TextField source={Buyer.propName} cellClassName={classes.title} />
             <TextField source={Buyer.propDescription} cellClassName={classes.title} />
             <DateField source={Buyer.propDatetime} />
-            <EditButton />
             <ShowButton />
+            <EditButton />
           </Datagrid>
         )}
       </List>

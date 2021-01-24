@@ -8,9 +8,9 @@ import {
   SimpleForm,
   TextInput,
   TopToolbar,
-  NumberInput,
 } from 'react-admin';
-import SliderNumberInput from '../../components/shared/form/SliderNumberInput';
+
+import SliderNumberInput from '../../components/shared/form/slider_number_input';
 
 import { Buyer } from '../../models/repositories/buyer';
 
@@ -23,7 +23,7 @@ const EditActions: FC<EditActionsProps> = ({ basePath, data }) => (
 export const BuyerEdit: React.FC<EditProps> = (props) => (
   <Edit actions={<EditActions />} {...props}>
     <SimpleForm redirect="list">
-      <TextInput source={Buyer.propName} />
+      <TextInput fullWidth source={Buyer.propName} />
       <SliderNumberInput source={Buyer.propInterview} type="nubmer" required step={1} min={1} max={10} />
       <SliderNumberInput source={Buyer.propVisit} type="nubmer" required step={1} min={1} max={10} />
       <SliderNumberInput source={Buyer.propVet} type="nubmer" required step={1} min={1} max={10} />
@@ -31,8 +31,8 @@ export const BuyerEdit: React.FC<EditProps> = (props) => (
       <SliderNumberInput source={Buyer.propOintment} type="nubmer" required step={1} min={1} max={10} />
       <SliderNumberInput source={Buyer.propPassenger} type="nubmer" required step={1} min={1} max={10} />
       <SliderNumberInput source={Buyer.propEnvironmental} type="nubmer" required step={1} min={1} max={10} />
-      <TextInput source={Buyer.propDescription} />
-      <DateTimeInput source={Buyer.propDatetime} />
+      <TextInput fullWidth source={Buyer.propDescription} multiline rows={20} />
+      <DateTimeInput fullWidth source={Buyer.propDatetime} />
     </SimpleForm>
   </Edit>
 );
