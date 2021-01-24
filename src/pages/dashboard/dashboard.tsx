@@ -1,9 +1,9 @@
 import 'leaflet/dist/leaflet.css';
-import React, { useState, useEffect, ReactPropTypes, FC, useRef } from 'react';
+import React, { useState, useEffect, FC, useRef } from 'react';
 import { makeStyles, Theme, useMediaQuery } from '@material-ui/core';
-import { MapContainer, MapContainerProps, Marker, Popup, TileLayer, useMapEvents } from 'react-leaflet';
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import './dashboard.css';
-import { Link, Title, useTranslate } from 'react-admin';
+import { Link, Title, useTranslate, linkToRecord } from 'react-admin';
 import { Icon, LatLngExpression } from 'leaflet';
 import { Chart } from 'chart.js';
 import dayjs from 'dayjs';
@@ -223,7 +223,9 @@ function Dashboard() {
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             {buyerMap.map((b) => (
               <Marker key={b.id} icon={markerIcon} position={[b.locationX, b.locationY]}>
-                <Popup>{b.name}</Popup>
+                <Popup>
+                  <Link to={`${linkToRecord('buyer', b && b.id)}/show`}>{b.name}</Link>
+                </Popup>
               </Marker>
             ))}
           </MapContainer>
