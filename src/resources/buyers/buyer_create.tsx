@@ -23,7 +23,7 @@ const EditActions: FC<EditActionsProps> = ({ basePath, data }) => (
 export const BuyerCreate: React.FC<CreateProps> = (props) => (
   <Create actions={<EditActions />} {...props}>
     <SimpleForm redirect="list">
-      <TextInput source={Buyer.propName} required />
+      <TextInput fullWidth source={Buyer.propName} required />
       <SliderNumberInput source={Buyer.propInterview} type="nubmer" required step={1} min={1} max={10} />
       <SliderNumberInput source={Buyer.propVisit} type="nubmer" required step={1} min={1} max={10} />
       <SliderNumberInput source={Buyer.propVet} type="nubmer" required step={1} min={1} max={10} />
@@ -31,8 +31,8 @@ export const BuyerCreate: React.FC<CreateProps> = (props) => (
       <SliderNumberInput source={Buyer.propOintment} type="nubmer" required step={1} min={1} max={10} />
       <SliderNumberInput source={Buyer.propPassenger} type="nubmer" required step={1} min={1} max={10} />
       <SliderNumberInput source={Buyer.propEnvironmental} type="nubmer" required step={1} min={1} max={10} />
-      <TextInput source={Buyer.propDescription} multiline rows={20} />
-      <DateTimeInput source={Buyer.propDatetime} initialValue={new Date()} />
+      <TextInput fullWidth source={Buyer.propDescription} multiline rows={20} />
+      <DateTimeInput fullWidth source={Buyer.propDatetime} initialValue={new Date()} />
       <LocationInput {...props} />
     </SimpleForm>
   </Create>
