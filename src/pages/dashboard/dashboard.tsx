@@ -220,7 +220,10 @@ function Dashboard() {
         <div className={classes.container}>
           <VetLineChart />
           <MapContainer className={classes.item} center={defaultPosition} zoom={13} scrollWheelZoom>
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            <TileLayer
+              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
             {buyerMap.map((b) => (
               <Marker key={b.id} icon={markerIcon} position={[b.locationX, b.locationY]}>
                 <Popup>

@@ -9,6 +9,7 @@ import {
   TopToolbar,
   DateTimeInput,
 } from 'react-admin';
+import LocationInput from '../../components/shared/form/location_input';
 import SliderNumberInput from '../../components/shared/form/slider_number_input';
 
 import { Buyer } from '../../models/repositories/buyer';
@@ -32,6 +33,7 @@ export const BuyerCreate: React.FC<CreateProps> = (props) => (
       <SliderNumberInput source={Buyer.propEnvironmental} type="nubmer" required step={1} min={1} max={10} />
       <TextInput source={Buyer.propDescription} multiline rows={20} />
       <DateTimeInput source={Buyer.propDatetime} initialValue={new Date()} />
+      <LocationInput {...props} />
     </SimpleForm>
   </Create>
 );
