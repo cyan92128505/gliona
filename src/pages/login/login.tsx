@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '100vh',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    background: 'url(https://source.unsplash.com/random/1600x900)',
+    background: 'url(https://source.unsplash.com/random/1600x900?pet)',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
   },
