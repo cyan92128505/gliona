@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Field, withTypes } from 'react-final-form';
 import { useLocation } from 'react-router-dom';
@@ -7,6 +7,8 @@ import { LoginProps } from 'ra-ui-materialui/lib/auth/Login';
 import { Box, Button, Card, CardActions, CircularProgress, Grid, TextField, Paper } from '@material-ui/core';
 import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
+import copy from 'copy-to-clipboard';
+
 import { CustomTheme } from '../../theme/custom_theme';
 import { AppMainLogo } from '../../components/shared/icons/app_icons';
 import { setSuperUser } from '../../redux/actions';
@@ -59,6 +61,21 @@ interface FormValues {
 }
 
 const { Form } = withTypes<FormValues>();
+
+const CopyButton: FC<{ message: string; typeName: string }> = (props) => {
+  const { message, typeName } = props;
+  const translate = useTranslate();
+  const notify = useNotify();
+  const handleCopy = () => {
+    notify(`${translate('ra.action.clone')}[${typeName}: ${message}]`, 'info');
+    copy(message);
+  };
+  return (
+    <Button color="inherit" onClick={handleCopy}>
+      {message}
+    </Button>
+  );
+};
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -145,10 +162,10 @@ const Login = () => {
             <Notification />
             <Box className={classes.hint}>
               <div>
-                <b>username:</b> test@gliona.com
+                <b>username:</b> <CopyButton typeName={translate('ra.auth.username')} message="test@gliona.com" />
               </div>
               <div>
-                <b>password:</b> test1234
+                <b>password:</b> <CopyButton typeName={translate('ra.auth.password')} message="test1234" />
               </div>
             </Box>
           </div>
