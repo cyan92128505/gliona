@@ -85,6 +85,8 @@ const MapConponent: React.FC<EditProps> = (props) => {
 };
 
 export const BuyerEdit: React.FC<EditProps> = (props) => {
+  const { resource } = props;
+
   return (
     <Edit actions={<EditActions />} {...props}>
       <SimpleForm redirect="list">
@@ -98,7 +100,12 @@ export const BuyerEdit: React.FC<EditProps> = (props) => {
         <SliderNumberInput source={Buyer.propEnvironmental} type="nubmer" required step={1} min={1} max={10} />
         <TextInput fullWidth source={Buyer.propDescription} multiline rows={20} />
         <DateTimeInput fullWidth source={Buyer.propDatetime} />
-        <LocationInput {...props} />
+        <LocationInput
+          resource={`${resource}`}
+          sourceLocationX={Buyer.propLocationX}
+          sourceLocationY={Buyer.propLocationY}
+          isEdit
+        />
       </SimpleForm>
     </Edit>
   );

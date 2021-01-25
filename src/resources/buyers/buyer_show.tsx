@@ -20,6 +20,7 @@ import { CustomTheme } from '../../theme/custom_theme';
 import { i18nProxy } from '../../i18n/language_proxy';
 import { Buyer } from '../../models/repositories/buyer';
 import { TextUtils } from '../../utils/text_utils';
+import LocationInput from '../../components/shared/form/location_input';
 
 interface ShowRecordProps extends SimpleFormProps {
   record?: Buyer;
@@ -98,10 +99,18 @@ const CustomShowForms: FC<ShowRecordProps> = (props) => {
 };
 
 export const BuyerShow: React.FC<ShowProps> = (props) => {
+  const { resource } = props;
+
   return (
     <Show title={<PostTitle />} actions={<ShowActions />} {...props}>
       <CustomShowForms>
         <DateField fullWidth source={Buyer.propDatetime} />
+        <LocationInput
+          resource={`${resource}`}
+          sourceLocationX={Buyer.propLocationX}
+          sourceLocationY={Buyer.propLocationY}
+          isEdit={false}
+        />
       </CustomShowForms>
     </Show>
   );
