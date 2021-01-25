@@ -1,3 +1,12 @@
+# GLIONA
+Manage the visited veterinary hospital
+
+## Preview
+![login-preview](https://raw.githubusercontent.com/cyan92128505/gliona/main/assets/login-preview.png)
+![intro](https://raw.githubusercontent.com/cyan92128505/gliona/main/assets/intro.png)
+![dashboard](https://raw.githubusercontent.com/cyan92128505/gliona/main/assets/dashboard.png)
+![list](https://raw.githubusercontent.com/cyan92128505/gliona/main/assets/list.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
